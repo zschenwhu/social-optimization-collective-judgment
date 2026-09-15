@@ -1,7 +1,6 @@
-[README.md](https://github.com/user-attachments/files/32229813/README.md)
 # Simulation data and figure code for *The Social Optimization of Collective Judgment*
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22764360.svg)](https://doi.org/10.5281/zenodo.22764360)
 
 Data and code accompanying
 
@@ -15,7 +14,7 @@ is the script behind each of the 20 data-driven figures of the book. Running
 checks that they match the printed figures byte for byte. Nothing in the figures is
 hand-edited, and no printed number of the worked cases is a typed-in constant.
 
-Archived version: https://doi.org/10.5281/zenodo.XXXXXXX · Development version: https://github.com/zschenwhu/social-optimization-collective-judgment · Release 1.0.0 (2026-09-15)
+Archived version: https://doi.org/10.5281/zenodo.22764360 · Development version: https://github.com/zschenwhu/social-optimization-collective-judgment · Release 1.0.0 (2026-09-15)
 
 ## Layout
 
@@ -222,7 +221,7 @@ If you use this data or code, please cite the book and the archived repository
 
 ```
 Chen, Z.-S., & Wang, X.-J. Simulation data and figure code for The Social
-Optimization of Collective Judgment (version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+Optimization of Collective Judgment (version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.22764360
 ```
 
 ## License
