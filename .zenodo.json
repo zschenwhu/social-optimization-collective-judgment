@@ -1,0 +1,13 @@
+{
+  "title": "Simulation data and figure code for The Social Optimization of Collective Judgment: A Multiobjective Framework from Consensus to Human-Machine Collaboration",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "license": "MIT",
+  "creators": [
+    {"name": "Chen, Zhen-Song", "affiliation": "School of Civil Engineering, Wuhan University"},
+    {"name": "Wang, Xian-Jia", "affiliation": "School of Economics and Management, Wuhan University"}
+  ],
+  "description": "Simulation data and figure code accompanying the Elsevier monograph The Social Optimization of Collective Judgment (Chen and Wang). One deterministic generator (seed 202603) regenerates every synthetic dataset (19 Excel workbooks) and solves every optimization the case studies report; the figure scripts draw the 20 data-driven figures of the book from those workbooks; a verification script checks that every rebuilt workbook equals the shipped one and that every regenerated figure has the same PDF content streams as the printed one.",
+  "keywords": ["expert judgment aggregation", "subjective probability distributions", "quantile averaging", "multiobjective optimization", "fairness", "human-machine collaboration", "reproducible research"],
+  "access_right": "open"
+}
