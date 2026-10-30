@@ -1,0 +1,266 @@
+{
+ "book": "The Social Optimization of Collective Judgment: A Multiobjective Framework from Consensus to Human-Machine Collaboration (Chen and Wang, Elsevier)",
+ "note": "The PDFs in this folder are the data-driven figures exactly as printed in the book; verify_figures.py regenerates every one from source and compares content streams. The conceptual diagrams of the book (TikZ) carry no data and are not part of this repository.",
+ "figures": [
+  {
+   "file": "fig2-1_linear_pool_vs_qa",
+   "label": "fig:lp-vs-qa",
+   "number": "Figure 2.1",
+   "chapter": "chapter2.tex",
+   "short_caption": "LP and quantile average of two equally weighted normal experts",
+   "order": 1,
+   "kind": "python",
+   "generator": "drawing_code/fig2-1_linear_pool_vs_qa.py",
+   "workbooks": [
+    "fig2-1_linear_pool_vs_qa.xlsx"
+   ]
+  },
+  {
+   "file": "fig2-2_three_pooling_operators",
+   "label": "fig:lp-lop-qa",
+   "number": "Figure 2.2",
+   "chapter": "chapter2.tex",
+   "short_caption": "The three pooling operators applied to the four equally weighted synthetic experts of Example 2.1",
+   "order": 2,
+   "kind": "python",
+   "generator": "drawing_code/fig2-2_three_pooling_operators.py",
+   "workbooks": [
+    "fig2-2_three_pooling_operators.xlsx"
+   ]
+  },
+  {
+   "file": "fig3-1_lorenz_gini_hoover",
+   "label": "fig:lorenz",
+   "number": "Figure 3.1",
+   "chapter": "chapter3.tex",
+   "short_caption": "Lorenz curve, Gini coefficient, and Hoover index of the Case I fairness panel's utilities at $\\delta = 0$",
+   "order": 3,
+   "kind": "python",
+   "generator": "drawing_code/fig3-1_lorenz_gini_hoover.py",
+   "workbooks": [
+    "fig3-1_lorenz_gini_hoover.xlsx"
+   ]
+  },
+  {
+   "file": "fig4-3_scalability",
+   "label": "fig:scalability",
+   "number": "Figure 4.3",
+   "chapter": "chapter4.tex",
+   "short_caption": "Pairwise interaction counts of the flat program and a balanced representative-level hierarchy",
+   "order": 4,
+   "kind": "python",
+   "generator": "drawing_code/fig4-3_scalability.py",
+   "workbooks": [
+    "fig4-3_scalability.xlsx"
+   ]
+  },
+  {
+   "file": "fig4-4_pareto_front",
+   "label": "fig:pareto",
+   "number": "Figure 4.4",
+   "chapter": "chapter4.tex",
+   "short_caption": "The Case I fairness panel's consensus-fairness Pareto front",
+   "order": 5,
+   "kind": "python",
+   "generator": "drawing_code/fig4-4_pareto_front.py",
+   "workbooks": [
+    "fig4-4_pareto_front.xlsx"
+   ]
+  },
+  {
+   "file": "fig5-2_calibration_sharpness",
+   "label": "fig:calsharp",
+   "number": "Figure 5.2",
+   "chapter": "chapter5.tex",
+   "short_caption": "Reliability error against resolution of each expert's forecasts in the panel of Example 5.1",
+   "order": 6,
+   "kind": "python",
+   "generator": "drawing_code/fig5-2_calibration_sharpness.py",
+   "workbooks": [
+    "fig5-2_calibration_sharpness.xlsx"
+   ]
+  },
+  {
+   "file": "fig5-3_loo",
+   "label": "fig:loo-chart",
+   "number": "Figure 5.3",
+   "chapter": "chapter5.tex",
+   "short_caption": "Calibration and resolution channels of each expert's leave-one-out contribution in Example 5.1",
+   "order": 7,
+   "kind": "python",
+   "generator": "drawing_code/fig5-3_loo.py",
+   "workbooks": [
+    "fig5-3_loo.xlsx"
+   ]
+  },
+  {
+   "file": "fig5-4_depnet",
+   "label": "fig:depnet",
+   "number": "Figure 5.4",
+   "chapter": "chapter5.tex",
+   "short_caption": "The expert-dependence network of Example 5.3, in which five model variants form a dense clique",
+   "order": 8,
+   "kind": "python",
+   "generator": "drawing_code/fig5-4_depnet.py",
+   "workbooks": [
+    "fig5-4_depnet.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-1_bim_groupagg",
+   "label": "fig:bim-groupagg",
+   "number": "Figure 6.1",
+   "chapter": "chapter6.tex",
+   "short_caption": "The three solved group opinions on the real-time-data indicator $q_4$ and their inter-group QA collective",
+   "order": 9,
+   "kind": "python",
+   "generator": "drawing_code/fig6-1_bim_expansion.py",
+   "workbooks": [
+    "fig6-1_bim_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-2_bim_dimensions",
+   "label": "fig:bim-dimensions",
+   "number": "Figure 6.2",
+   "chapter": "chapter6.tex",
+   "short_caption": "Technology, organization, and policy maturity distributions and the global BIM maturity",
+   "order": 10,
+   "kind": "python",
+   "generator": "drawing_code/fig6-1_bim_expansion.py",
+   "workbooks": [
+    "fig6-1_bim_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-3_bim_densities",
+   "label": "fig:bim-densities",
+   "number": "Figure 6.3",
+   "chapter": "chapter6.tex",
+   "short_caption": "Seven expert judgments and the collective aggregates at $\\delta=0$ and $\\delta=0.5$ for the maturity panel",
+   "order": 11,
+   "kind": "python",
+   "generator": "drawing_code/fig6-3_bim_densities.py",
+   "workbooks": [
+    "fig6-3_bim_densities.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-4_bim_tradeoff",
+   "label": "fig:bim-tradeoff",
+   "number": "Figure 6.4",
+   "chapter": "chapter6.tex",
+   "short_caption": "Consensus $\\bar{A}$, collective fairness $\\bar{\\Phi}$, and minimum overlap across the fairness-weight sweep",
+   "order": 12,
+   "kind": "python",
+   "generator": "drawing_code/fig6-4_bim_tradeoff.py",
+   "workbooks": [
+    "fig6-4_bim_tradeoff.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-5_dt_ranking14",
+   "label": "fig:dt-ranking14",
+   "number": "Figure 6.5",
+   "chapter": "chapter6.tex",
+   "short_caption": "The fourteen barriers ranked by mean collective importance averaged over the five equity objectives",
+   "order": 13,
+   "kind": "python",
+   "generator": "drawing_code/fig6-5_dt_expansion.py",
+   "workbooks": [
+    "fig6-5_dt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-6_dt_crossswf",
+   "label": "fig:dt-crossswf",
+   "number": "Figure 6.6",
+   "chapter": "chapter6.tex",
+   "short_caption": "Collective barrier means under the five inequality indices, with barriers in final ranked order",
+   "order": 14,
+   "kind": "python",
+   "generator": "drawing_code/fig6-5_dt_expansion.py",
+   "workbooks": [
+    "fig6-5_dt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-7_dt_triad",
+   "label": "fig:dt-triad",
+   "number": "Figure 6.7",
+   "chapter": "chapter6.tex",
+   "short_caption": "Collective distributions of the leading triad $B_{14}$, $B_6$, and $B_1$ under the Gini criterion $\\mathrm{EQ}_4$",
+   "order": 15,
+   "kind": "python",
+   "generator": "drawing_code/fig6-5_dt_expansion.py",
+   "workbooks": [
+    "fig6-5_dt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-8_bdt_q1agg",
+   "label": "fig:bdt-q1agg",
+   "number": "Figure 6.8",
+   "chapter": "chapter6.tex",
+   "short_caption": "Three subgroup opinions on the response-and-control indicator $q_1$ and their inter-group collective",
+   "order": 16,
+   "kind": "python",
+   "generator": "drawing_code/fig6-8_bdt_expansion.py",
+   "workbooks": [
+    "fig6-8_bdt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-9_bdt_profile",
+   "label": "fig:bdt-profile",
+   "number": "Figure 6.9",
+   "chapter": "chapter6.tex",
+   "short_caption": "Maturity of the seven dimensions and the global maturity on the five-level scale",
+   "order": 17,
+   "kind": "python",
+   "generator": "drawing_code/fig6-8_bdt_expansion.py",
+   "workbooks": [
+    "fig6-8_bdt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-10_bdt_sensitivity",
+   "label": "fig:bdt-sensitivity",
+   "number": "Figure 6.10",
+   "chapter": "chapter6.tex",
+   "short_caption": "Collective fairness, weight Gini, aggregate variance, and global maturity against the fairness weight $\\delta$",
+   "order": 18,
+   "kind": "python",
+   "generator": "drawing_code/fig6-8_bdt_expansion.py",
+   "workbooks": [
+    "fig6-8_bdt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-11_rt_equity",
+   "label": "fig:rt-equity",
+   "number": "Figure 6.11",
+   "chapter": "chapter6.tex",
+   "short_caption": "The collective accessibility of the ten stations under the consensus-only and the equity-aware regimes",
+   "order": 19,
+   "kind": "python",
+   "generator": "drawing_code/fig6-11_rt_expansion.py",
+   "workbooks": [
+    "fig6-11_rt_case.xlsx"
+   ]
+  },
+  {
+   "file": "fig6-12_hm_calsharp",
+   "label": "fig:hm-calsharp",
+   "number": "Figure 6.12",
+   "chapter": "chapter6.tex",
+   "short_caption": "Each human and machine forecaster on the reliability–resolution plane",
+   "order": 20,
+   "kind": "python",
+   "generator": "drawing_code/fig6-12_hm_calsharp.py",
+   "workbooks": [
+    "fig6-12_hm_calsharp.xlsx"
+   ]
+  }
+ ]
+}
