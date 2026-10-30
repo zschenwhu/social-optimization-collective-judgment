@@ -1,0 +1,6661 @@
+{
+  "_generated_by": "figure_code/simulation_data/gen_case_manifest.py -- do not edit by hand; regenerate after build_workbooks.py",
+  "_seed": 202603,
+  "_honesty_rule": "Every study below is an ILLUSTRATIVE SYNTHETIC construction. Each case mirrors its published application at the level of MECHANISM only (for Case IV, that equity weighting reorders priorities). No number below is a finding of any cited study, and the prose must not attribute any of them to one.",
+  "case_iii": {
+    "case": "III",
+    "title": "Building digital twin maturity via FA-LSCOG",
+    "source_paper": "chen2024bdt",
+    "honesty": "Synthetic 15-expert x 22-indicator truncated-Weibull panel under seed 202603, generated and solved in build_workbooks.py. Mirrors the source study at the level of MECHANISM only and must NOT be presented as reproducing any elicited value.",
+    "seed": 202603,
+    "probe_seed": 202604,
+    "program": "max_w delta*Phi~(w) - (1-delta)*V~(w) - lambda_G*G(w), w in the subgroup simplex; no consensus term (alpha = 0, beta = 1 - delta in eq:fair-scalarized)",
+    "parameters": {
+      "rho": 0.4,
+      "vartheta": 0.2,
+      "power_kappa": 2.0,
+      "lambda_G": 0.5,
+      "operating_delta": 0.5,
+      "solver": "scipy 1.13.1 SLSQP, ftol 1e-10, maxiter 300, forward-difference gradients; a run ends when SLSQP's convergence test is met at accuracy ftol (status 0: with the constraints satisfied, an objective change or a step below ftol, or the first-order change it predicts for the next step below ftol) or at the iteration cap (status 9); per program n_runs_capped, n_runs_other_exit, best_run_status",
+      "starts": "12 Dirichlet(1) random starts + the uniform point + the best sampled point, the last dropped when it equals the uniform point (distinct starts only, the ORIGINAL starts); the best original start is the solution unless a further start ends above it by more than tie_tol (see retention)",
+      "normalization": "min-max per program over 300 Dirichlet(1) points + the vertices + the uniform point; ranges in intra_group_solutions (Phi_min, Phi_max, V_min, V_max)"
+    },
+    "groups": [
+      {
+        "group": "G1",
+        "stratum": "mixed experience",
+        "size": 4,
+        "Omega": 0.28,
+        "Omega_3dp": 0.282,
+        "q1_mean": 2.51
+      },
+      {
+        "group": "G2",
+        "stratum": "junior, broad but shallow project record",
+        "size": 6,
+        "Omega": 0.19,
+        "Omega_3dp": 0.191,
+        "q1_mean": 2.65
+      },
+      {
+        "group": "G3",
+        "stratum": "senior, long experience and high credentials",
+        "size": 5,
+        "Omega": 0.53,
+        "Omega_3dp": 0.527,
+        "q1_mean": 3.01
+      }
+    ],
+    "q1_collective_mean": 2.8,
+    "topsis_closeness": [
+      0.456,
+      0.31,
+      0.852
+    ],
+    "dimensions": [
+      {
+        "id": "D1",
+        "dimension": "D1 Instrumented Asset",
+        "weight": 0.22,
+        "weight_3dp": 0.224,
+        "mean": 2.84,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 1,
+        "bwm_others_to_worst": 3
+      },
+      {
+        "id": "D2",
+        "dimension": "D2 BDT Model",
+        "weight": 0.12,
+        "weight_3dp": 0.121,
+        "mean": 2.73,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 2,
+        "bwm_others_to_worst": 2
+      },
+      {
+        "id": "D3",
+        "dimension": "D3 BDT Data",
+        "weight": 0.22,
+        "weight_3dp": 0.224,
+        "mean": 2.76,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 1,
+        "bwm_others_to_worst": 3
+      },
+      {
+        "id": "D4",
+        "dimension": "D4 Connection & Interaction",
+        "weight": 0.12,
+        "weight_3dp": 0.121,
+        "mean": 2.62,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 2,
+        "bwm_others_to_worst": 2
+      },
+      {
+        "id": "D5",
+        "dimension": "D5 Function & Service",
+        "weight": 0.12,
+        "weight_3dp": 0.121,
+        "mean": 2.58,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 2,
+        "bwm_others_to_worst": 2
+      },
+      {
+        "id": "D6",
+        "dimension": "D6 System Perspective",
+        "weight": 0.07,
+        "weight_3dp": 0.069,
+        "mean": 2.49,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 3,
+        "bwm_others_to_worst": 1
+      },
+      {
+        "id": "D7",
+        "dimension": "D7 Organization Perspective",
+        "weight": 0.12,
+        "weight_3dp": 0.121,
+        "mean": 2.9,
+        "level": "Primary BDT",
+        "bwm_best_to_others": 2,
+        "bwm_others_to_worst": 2
+      }
+    ],
+    "bwm": {
+      "best": "D1",
+      "worst": "D6",
+      "model": "linear (rezaei2016linear)",
+      "xi_linear": 0.017,
+      "a_BW": 3,
+      "consistency_ratio_input_based": 0.1667,
+      "consistency_ratio_input_based_at": "D2,D4,D5,D7",
+      "threshold_input_based": 0.1667,
+      "threshold_source": "liang2020consistency, Table 3",
+      "ordinal_consistent": 1,
+      "ordinal_rule": "liang2020consistency, Definition 4 (eq. 8)"
+    },
+    "global": {
+      "maturity": 2.73,
+      "level": "Primary BDT",
+      "aggregate_variance": 0.357,
+      "fairness_Phi": 0.98,
+      "weight_gini": 0.11,
+      "mass_below_2": 0.118
+    },
+    "sweep": [
+      {
+        "delta": 0.0,
+        "global_maturity": 2.69,
+        "fairness_Phi": 0.956,
+        "aggregate_variance": 0.31,
+        "weight_gini": 0.55,
+        "mass_below_2": 0.115
+      },
+      {
+        "delta": 0.1,
+        "global_maturity": 2.72,
+        "fairness_Phi": 0.97,
+        "aggregate_variance": 0.329,
+        "weight_gini": 0.38,
+        "mass_below_2": 0.114
+      },
+      {
+        "delta": 0.2,
+        "global_maturity": 2.73,
+        "fairness_Phi": 0.978,
+        "aggregate_variance": 0.347,
+        "weight_gini": 0.2,
+        "mass_below_2": 0.116
+      },
+      {
+        "delta": 0.3,
+        "global_maturity": 2.73,
+        "fairness_Phi": 0.979,
+        "aggregate_variance": 0.352,
+        "weight_gini": 0.14,
+        "mass_below_2": 0.117
+      },
+      {
+        "delta": 0.4,
+        "global_maturity": 2.73,
+        "fairness_Phi": 0.979,
+        "aggregate_variance": 0.354,
+        "weight_gini": 0.12,
+        "mass_below_2": 0.117
+      },
+      {
+        "delta": 0.5,
+        "global_maturity": 2.73,
+        "fairness_Phi": 0.98,
+        "aggregate_variance": 0.357,
+        "weight_gini": 0.11,
+        "mass_below_2": 0.118
+      }
+    ],
+    "moments": {
+      "member_sd_min": 0.43,
+      "member_sd_max": 0.78,
+      "member_sd_mean": 0.59,
+      "largest_group_variance_op": 0.474
+    },
+    "multistart": {
+      "n_programs": 396,
+      "n_runs": 5360,
+      "n_best_sampled_is_center": 184,
+      "n_runs_capped": 1,
+      "retention": "retained solution = the best run of the further starts (second set, or the follow-up where there is one) wherever it ends above the best original start by more than tie_tol, else the best original start; retained_source in intra_group_solutions ('original starts', 'second set', 'follow-up'), original_best_objective and further_best_minus_original_best beside it; the local polish (see polish) is a diagnostic, not a retention step, and changes no retained solution",
+      "median_starts_at_best": 11.0,
+      "n_two_or_more_at_best": 369,
+      "n_one_at_best": 23,
+      "n_none_at_best": 4,
+      "max_gap_one_at_best": 0.00025,
+      "max_gap_none_at_best": 1.2e-05,
+      "retained_n_from_further_starts": 4,
+      "retained_from_further_programs": "delta 0.1, G3, q9 (follow-up);delta 0.1, G3, q15 (second set);delta 0.2, G1, q3 (second set);delta 0.2, G1, q9 (second set)",
+      "further_n_programs_exceeded": 4,
+      "further_max_raise": 1.2e-05,
+      "further_max_raise_argmax": "delta 0.1, G3, q15",
+      "followup": [
+        {
+          "delta": 0.1,
+          "group": "G3",
+          "indicator": "q9",
+          "original_runner_up_gap": 0.0023,
+          "n_followup_starts": 200,
+          "n_match_original_best": 0,
+          "n_exceed_original_best": 20,
+          "exceed_min": 6.2e-06,
+          "best_minus_original_best": 9.9e-06,
+          "exceed_max_weight_diff": 0.0016,
+          "runner_up_weight_diff": 0.2,
+          "retained_source": "follow-up"
+        }
+      ],
+      "probe_starts": 12,
+      "probe_n_programs_exceeded": 4,
+      "probe_max_raise": 1.2e-05,
+      "probe_max_raise_argmax": "delta 0.1, G3, q15",
+      "near_tol": 1e-05,
+      "near_weight_diff_max": 0.072,
+      "near_weight_diff_argmax": "delta 0.3, G2, q5",
+      "near_n_programs_weight_diff_above_0.01": 5,
+      "near_mean_diff_max": 0.011,
+      "swap_n_printed_quantities": 37,
+      "swap_near_n_printed_changed": 1,
+      "swap_original_n_printed_changed": 0,
+      "swap_near_changed_quantities": "single-member programs, delta 0",
+      "swap_near_single_member_count_delta0": 26,
+      "swap_near_vertex_lost_programs": "delta 0.0, G2, q12",
+      "swap_near_vertex_lost_kept_weight": 0.9988,
+      "retained_n_Phi_tilde_above_1": 20,
+      "retained_max_Phi_tilde": 1.07,
+      "polish_n_programs_gain_above_tie_tol": 9,
+      "polish_max_gain": 4.1e-05,
+      "polish_max_gain_argmax": "delta 0.1, G1, q6",
+      "polish_max_weight_diff": 0.0018,
+      "polish_max_weight_diff_argmax": "delta 0.1, G2, q12",
+      "polish_max_mean_diff": 9.9e-05,
+      "polish_first_round_max_gain": 3.2e-05,
+      "swap_polished_n_printed_changed": 0,
+      "retained_accuracy_bound": 4.1e-05
+    }
+  },
+  "case_iv": {
+    "case": "IV",
+    "title": "Urban rail-transit station accessibility with stakeholder equity",
+    "section": "6.5",
+    "source_paper": "chen2024railtransit",
+    "honesty": "Synthetic instrument and panel under seed 202603. Mirrors the source study at the level of MECHANISM only -- equity weighting reorders priorities -- and must NOT be presented as reproducing any substantive finding of the source paper.",
+    "seed": 202603,
+    "workbook_column_suffixes": "_eff = consensus-only regime, _eq = equity-aware regime (Sen's abbreviated welfare form)",
+    "instrument": {
+      "n_stations": 10,
+      "scale": "continuous accessibility index on [0, 10], Gaussian fits",
+      "stations": [
+        {
+          "id": "S1",
+          "name": "Central Exchange",
+          "generator_means": {
+            "operators": 8.0,
+            "passengers": 7.8,
+            "advocates": 7.6
+          }
+        },
+        {
+          "id": "S2",
+          "name": "Civic Plaza",
+          "generator_means": {
+            "operators": 7.4,
+            "passengers": 7.2,
+            "advocates": 7.0
+          }
+        },
+        {
+          "id": "S3",
+          "name": "Riverside",
+          "generator_means": {
+            "operators": 6.7,
+            "passengers": 6.6,
+            "advocates": 6.4
+          }
+        },
+        {
+          "id": "S4",
+          "name": "Northgate Interchange",
+          "generator_means": {
+            "operators": 6.5,
+            "passengers": 6.3,
+            "advocates": 4.5
+          }
+        },
+        {
+          "id": "S5",
+          "name": "University Park",
+          "generator_means": {
+            "operators": 6.0,
+            "passengers": 5.9,
+            "advocates": 5.8
+          }
+        },
+        {
+          "id": "S6",
+          "name": "Harbor View",
+          "generator_means": {
+            "operators": 5.4,
+            "passengers": 5.3,
+            "advocates": 5.2
+          }
+        },
+        {
+          "id": "S7",
+          "name": "Meadow East",
+          "generator_means": {
+            "operators": 4.9,
+            "passengers": 4.8,
+            "advocates": 4.7
+          }
+        },
+        {
+          "id": "S8",
+          "name": "Old Town",
+          "generator_means": {
+            "operators": 4.4,
+            "passengers": 4.3,
+            "advocates": 4.2
+          }
+        },
+        {
+          "id": "S9",
+          "name": "Westfield Depot",
+          "generator_means": {
+            "operators": 3.9,
+            "passengers": 3.8,
+            "advocates": 3.6
+          }
+        },
+        {
+          "id": "S10",
+          "name": "Airport South",
+          "generator_means": {
+            "operators": 3.3,
+            "passengers": 3.2,
+            "advocates": 3.1
+          }
+        }
+      ],
+      "contested_station": "S4"
+    },
+    "panel": {
+      "N": 24,
+      "constituencies": [
+        {
+          "constituency": "operators",
+          "size": 8
+        },
+        {
+          "constituency": "passenger representatives",
+          "size": 10
+        },
+        {
+          "constituency": "accessibility advocates",
+          "size": 6
+        }
+      ],
+      "generator": {
+        "leniency_sd": 0.15,
+        "noise_sd": 0.25,
+        "common_reported_sd": 1.0,
+        "draw_order": "numpy default_rng(202603): 24 leniency draws N(0, 0.15^2), one per stakeholder; then 240 scalar noise draws N(0, 0.25^2) station-major (S1 stakeholders 1..24, then S2, ...); then the 40 Dirichlet(1,...,1) SQP start vectors",
+        "clip": "each mean clipped to [0, 10]",
+        "clip_binding": false,
+        "note": "all stakeholders share a common reported assessment precision, so the confidence objective is constant over the simplex and non-discriminating; it is DROPPED from both regimes, each of which is a single-objective program"
+      }
+    },
+    "model": {
+      "regime_consensus": "consensus only -- the mean overlap, i.e. the cumulative overlap of def:consensus divided by N as in Case I (same argmax); the confidence objective is dropped",
+      "regime_equity": "Sen's abbreviated welfare form, mean power-normalized Fehr-Schmidt utility times one minus the Gini of the utilities, Ubar (1 - G(U)); the confidence objective is dropped (regime id 'eq4' in the sheets; not the bare equity objective EQ_4 = -I_4 of Table tab:swf)",
+      "overlap": "def:consensus for equal-variance normals, closed form over the real line: 2 Phi(-|mu_i - m| / (2 sigma)); no truncation, no quadrature",
+      "fairness_utilities": "Fehr-Schmidt utilities of the overlaps (rho 0.4, vartheta 0.2), power normalization (eq:parabola-norm, kappa 2), as in Cases I and III; Case II uses the exponential normalization",
+      "solver": "multi-start sequential quadratic programming: scipy.optimize.minimize method SLSQP, finite-difference gradients, bounds [0,1], equality constraint sum w = 1; both regimes; best objective over the starts retained",
+      "solver_starts": "uniform vector plus 40 Dirichlet(1,...,1) draws (see generator_draw_order), shared by every station and regime",
+      "solver_ftol": 1e-12,
+      "certification": "every objective depends on w only through m = w.mu (common sigma); a dense scan of m over [min mu, max mu] with 8001 points and a bounded refinement (xatol 1e-12) is the global solver of the 1-D problem; the build aborts unless the SQP best is within 1e-08 (objective) and 0.0001 (m) of it",
+      "consensus_optimum": "with a common sigma each overlap is convex in m on either side of mu_i, so the consensus optimum is one member's own mean; results column consensus_member (max distance 8.8e-09)",
+      "weight_reporting": "BOTH regimes report the nearest-to-uniform weight vector of their own optimal level set (the projection of the uniform vector onto the set, a convex QP cross-checked against its KKT form), one shared tie-break, so the weight-Gini and constituency-share columns are comparable across the regimes. The shares are tie-break representatives, not properties of the optima; what each optimal level set fixes is the LP range of the advocates' share (level_set_advocate_share) and the overlaps and utilities, which depend on w only through the collective mean",
+      "priority_rule": "upgrading priority = ascending collective accessibility (worst station first)"
+    },
+    "results": {
+      "stations": [
+        {
+          "id": "S1",
+          "name": "Central Exchange",
+          "mean_consensus": 7.89,
+          "mean_equity": 7.88,
+          "priority_consensus": 10,
+          "priority_equity": 10,
+          "weight_gini_consensus": 0.04,
+          "weight_gini_equity": 0.02,
+          "advocate_share_consensus": 0.23,
+          "advocate_share_equity": 0.24,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            0.87
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            0.89
+          ],
+          "advocate_mean_overlap_consensus": 0.82,
+          "advocate_mean_overlap_equity": 0.83,
+          "mean_overlap_consensus": 0.89,
+          "mean_overlap_equity": 0.89,
+          "min_overlap_consensus": 0.61,
+          "min_overlap_equity": 0.61,
+          "mean_utility_consensus": 0.931,
+          "mean_utility_equity": 0.931,
+          "utility_gini_consensus": 0.027,
+          "utility_gini_equity": 0.027,
+          "consensus_member": "14 (passenger representatives)"
+        },
+        {
+          "id": "S2",
+          "name": "Civic Plaza",
+          "mean_consensus": 7.09,
+          "mean_equity": 7.27,
+          "priority_consensus": 9,
+          "priority_equity": 9,
+          "weight_gini_consensus": 0.1,
+          "weight_gini_equity": 0.18,
+          "advocate_share_consensus": 0.3,
+          "advocate_share_equity": 0.16,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            1.0
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            0.8
+          ],
+          "advocate_mean_overlap_consensus": 0.87,
+          "advocate_mean_overlap_equity": 0.8,
+          "mean_overlap_consensus": 0.89,
+          "mean_overlap_equity": 0.88,
+          "min_overlap_consensus": 0.65,
+          "min_overlap_equity": 0.68,
+          "mean_utility_consensus": 0.923,
+          "mean_utility_equity": 0.931,
+          "utility_gini_consensus": 0.028,
+          "utility_gini_equity": 0.027,
+          "consensus_member": "19 (accessibility advocates)"
+        },
+        {
+          "id": "S3",
+          "name": "Riverside",
+          "mean_consensus": 6.69,
+          "mean_equity": 6.63,
+          "priority_consensus": 8,
+          "priority_equity": 8,
+          "weight_gini_consensus": 0.06,
+          "weight_gini_equity": 0.04,
+          "advocate_share_consensus": 0.22,
+          "advocate_share_equity": 0.27,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            1.0
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            1.0
+          ],
+          "advocate_mean_overlap_consensus": 0.85,
+          "advocate_mean_overlap_equity": 0.87,
+          "mean_overlap_consensus": 0.88,
+          "mean_overlap_equity": 0.88,
+          "min_overlap_consensus": 0.71,
+          "min_overlap_equity": 0.74,
+          "mean_utility_consensus": 0.936,
+          "mean_utility_equity": 0.937,
+          "utility_gini_consensus": 0.016,
+          "utility_gini_equity": 0.017,
+          "consensus_member": "6 (operators)"
+        },
+        {
+          "id": "S4",
+          "name": "Northgate Interchange",
+          "mean_consensus": 6.54,
+          "mean_equity": 5.54,
+          "priority_consensus": 7,
+          "priority_equity": 6,
+          "weight_gini_consensus": 0.29,
+          "weight_gini_equity": 0.28,
+          "advocate_share_consensus": 0.03,
+          "advocate_share_equity": 0.46,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            0.2
+          ],
+          "level_set_advocate_share_equity": [
+            0.07,
+            0.72
+          ],
+          "advocate_mean_overlap_consensus": 0.32,
+          "advocate_mean_overlap_equity": 0.62,
+          "mean_overlap_consensus": 0.75,
+          "mean_overlap_equity": 0.62,
+          "min_overlap_consensus": 0.23,
+          "min_overlap_equity": 0.48,
+          "mean_utility_consensus": 0.713,
+          "mean_utility_equity": 0.87,
+          "utility_gini_consensus": 0.204,
+          "utility_gini_equity": 0.028,
+          "consensus_member": "4 (operators)"
+        },
+        {
+          "id": "S5",
+          "name": "University Park",
+          "mean_consensus": 6.02,
+          "mean_equity": 5.92,
+          "priority_consensus": 6,
+          "priority_equity": 7,
+          "weight_gini_consensus": 0.16,
+          "weight_gini_equity": 0.02,
+          "advocate_share_consensus": 0.2,
+          "advocate_share_equity": 0.26,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            1.0
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            1.0
+          ],
+          "advocate_mean_overlap_consensus": 0.88,
+          "advocate_mean_overlap_equity": 0.9,
+          "mean_overlap_consensus": 0.9,
+          "mean_overlap_equity": 0.9,
+          "min_overlap_consensus": 0.77,
+          "min_overlap_equity": 0.77,
+          "mean_utility_consensus": 0.948,
+          "mean_utility_equity": 0.958,
+          "utility_gini_consensus": 0.013,
+          "utility_gini_equity": 0.012,
+          "consensus_member": "2 (operators)"
+        },
+        {
+          "id": "S6",
+          "name": "Harbor View",
+          "mean_consensus": 5.32,
+          "mean_equity": 5.34,
+          "priority_consensus": 5,
+          "priority_equity": 5,
+          "weight_gini_consensus": 0.04,
+          "weight_gini_equity": 0.0,
+          "advocate_share_consensus": 0.27,
+          "advocate_share_equity": 0.25,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            0.89
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            0.87
+          ],
+          "advocate_mean_overlap_consensus": 0.89,
+          "advocate_mean_overlap_equity": 0.88,
+          "mean_overlap_consensus": 0.91,
+          "mean_overlap_equity": 0.91,
+          "min_overlap_consensus": 0.7,
+          "min_overlap_equity": 0.71,
+          "mean_utility_consensus": 0.95,
+          "mean_utility_equity": 0.95,
+          "utility_gini_consensus": 0.018,
+          "utility_gini_equity": 0.018,
+          "consensus_member": "2 (operators)"
+        },
+        {
+          "id": "S7",
+          "name": "Meadow East",
+          "mean_consensus": 4.88,
+          "mean_equity": 5.05,
+          "priority_consensus": 4,
+          "priority_equity": 4,
+          "weight_gini_consensus": 0.1,
+          "weight_gini_equity": 0.17,
+          "advocate_share_consensus": 0.28,
+          "advocate_share_equity": 0.19,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            1.0
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            0.8
+          ],
+          "advocate_mean_overlap_consensus": 0.93,
+          "advocate_mean_overlap_equity": 0.86,
+          "mean_overlap_consensus": 0.9,
+          "mean_overlap_equity": 0.89,
+          "min_overlap_consensus": 0.69,
+          "min_overlap_equity": 0.66,
+          "mean_utility_consensus": 0.93,
+          "mean_utility_equity": 0.936,
+          "utility_gini_consensus": 0.029,
+          "utility_gini_equity": 0.023,
+          "consensus_member": "6 (operators)"
+        },
+        {
+          "id": "S8",
+          "name": "Old Town",
+          "mean_consensus": 4.38,
+          "mean_equity": 4.42,
+          "priority_consensus": 3,
+          "priority_equity": 3,
+          "weight_gini_consensus": 0.0,
+          "weight_gini_equity": 0.06,
+          "advocate_share_consensus": 0.25,
+          "advocate_share_equity": 0.23,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            1.0
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            1.0
+          ],
+          "advocate_mean_overlap_consensus": 0.89,
+          "advocate_mean_overlap_equity": 0.88,
+          "mean_overlap_consensus": 0.91,
+          "mean_overlap_equity": 0.91,
+          "min_overlap_consensus": 0.63,
+          "min_overlap_equity": 0.61,
+          "mean_utility_consensus": 0.941,
+          "mean_utility_equity": 0.944,
+          "utility_gini_consensus": 0.024,
+          "utility_gini_equity": 0.024,
+          "consensus_member": "11 (passenger representatives)"
+        },
+        {
+          "id": "S9",
+          "name": "Westfield Depot",
+          "mean_consensus": 3.89,
+          "mean_equity": 3.56,
+          "priority_consensus": 2,
+          "priority_equity": 2,
+          "weight_gini_consensus": 0.14,
+          "weight_gini_equity": 0.38,
+          "advocate_share_consensus": 0.17,
+          "advocate_share_equity": 0.48,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            0.74
+          ],
+          "level_set_advocate_share_equity": [
+            0.06,
+            1.0
+          ],
+          "advocate_mean_overlap_consensus": 0.8,
+          "advocate_mean_overlap_equity": 0.89,
+          "mean_overlap_consensus": 0.91,
+          "mean_overlap_equity": 0.86,
+          "min_overlap_consensus": 0.59,
+          "min_overlap_equity": 0.69,
+          "mean_utility_consensus": 0.926,
+          "mean_utility_equity": 0.931,
+          "utility_gini_consensus": 0.033,
+          "utility_gini_equity": 0.02,
+          "consensus_member": "5 (operators)"
+        },
+        {
+          "id": "S10",
+          "name": "Airport South",
+          "mean_consensus": 3.14,
+          "mean_equity": 3.21,
+          "priority_consensus": 1,
+          "priority_equity": 1,
+          "weight_gini_consensus": 0.06,
+          "weight_gini_equity": 0.06,
+          "advocate_share_consensus": 0.25,
+          "advocate_share_equity": 0.25,
+          "level_set_advocate_share_consensus": [
+            0.0,
+            1.0
+          ],
+          "level_set_advocate_share_equity": [
+            0.0,
+            1.0
+          ],
+          "advocate_mean_overlap_consensus": 0.9,
+          "advocate_mean_overlap_equity": 0.9,
+          "mean_overlap_consensus": 0.9,
+          "mean_overlap_equity": 0.9,
+          "min_overlap_consensus": 0.72,
+          "min_overlap_equity": 0.72,
+          "mean_utility_consensus": 0.946,
+          "mean_utility_equity": 0.949,
+          "utility_gini_consensus": 0.017,
+          "utility_gini_equity": 0.018,
+          "consensus_member": "4 (operators)"
+        }
+      ],
+      "priority_order_consensus": [
+        "S10",
+        "S9",
+        "S8",
+        "S7",
+        "S6",
+        "S5",
+        "S4",
+        "S3",
+        "S2",
+        "S1"
+      ],
+      "priority_order_equity": [
+        "S10",
+        "S9",
+        "S8",
+        "S7",
+        "S6",
+        "S4",
+        "S5",
+        "S3",
+        "S2",
+        "S1"
+      ],
+      "max_uncontested_mean_gap": 0.33,
+      "max_uncontested_mean_gap_station": "S9",
+      "uncontested_gaps_below_threshold": "8/9 below 0.2 (uncontested = every station but the contested one)",
+      "contested_mean_gap": 0.99,
+      "largest_gap_realized_panel": {
+        "station": "S9",
+        "two_lowest_below_panel_mean": [
+          0.98,
+          0.73
+        ],
+        "two_lowest_constituencies": [
+          "accessibility advocates",
+          "accessibility advocates"
+        ]
+      },
+      "swap": {
+        "stations": [
+          "S4",
+          "S5"
+        ],
+        "statement": "under the equity-aware regime S4 moves ahead of S5 in upgrading priority; every other pairwise order is unchanged",
+        "contested_means": {
+          "S4": {
+            "consensus": 6.54,
+            "equity": 5.54
+          },
+          "S5": {
+            "consensus": 6.02,
+            "equity": 5.92
+          }
+        },
+        "equity_margin": 0.38,
+        "reseed_margin_sd": 0.11,
+        "reseed_margin_min": 0.25,
+        "advocate_share_at_contested": {
+          "consensus": 0.03,
+          "equity": 0.46,
+          "ratio_equity_to_consensus": 16.55,
+          "note": "nearest-to-uniform tie-break representatives"
+        },
+        "level_set_advocate_share_at_contested": {
+          "consensus": "0.0000 .. 0.2036",
+          "equity": "0.0698 .. 0.7191",
+          "common": "0.0698 .. 0.2036",
+          "headcount_share": 0.25,
+          "consensus_caps_below_headcount_at": "S4"
+        }
+      },
+      "weight_gini": {
+        "average_consensus": 0.1,
+        "average_equity": 0.12,
+        "statement": "averaged over the ten stations, and with both regimes reporting the nearest-to-uniform representative of their optimal level sets, the weight Gini stands at 0.10 under the consensus-only regime and 0.12 under the equity-aware regime",
+        "near_tie_range_consensus": "0.0939 .. 0.1001",
+        "near_tie_range_equity": "0.1191 .. 0.1377"
+      },
+      "near_ties": {
+        "tolerance_relative": 0.0001,
+        "rule": "every other interior local maximum of the certification scan, refined like the optimum, is compared with the optimum by its RELATIVE gap (v* - v) / v*, which does not depend on the scale of the objective (consensus as the mean or the cumulative overlap); it is a near-tie when that gap is below near_tie_tolerance; sheet near_ties has one row per near-tied local maximum (rank 1 = the runner-up of the certification sheet), and sheet near_tie_combinations re-evaluates every combination of reported and near-tied optima (1 + k choices at a solve with k)",
+        "solves": "4/20 solves, 5 local maxima: S1 eq4 (2), S3 eff, S3 eq4, S6 eff",
+        "smallest_non_tie_relative_gap": 0.000227,
+        "local_maxima": [
+          {
+            "station": "S1",
+            "regime": "eq4",
+            "rank": 1,
+            "m_reported": 7.88,
+            "m_local_max": 7.74,
+            "objective_gap": 8.91e-06,
+            "relative_gap": 9.83e-06
+          },
+          {
+            "station": "S1",
+            "regime": "eq4",
+            "rank": 2,
+            "m_reported": 7.88,
+            "m_local_max": 7.77,
+            "objective_gap": 1.72e-05,
+            "relative_gap": 1.9e-05
+          },
+          {
+            "station": "S3",
+            "regime": "eff",
+            "rank": 1,
+            "m_reported": 6.69,
+            "m_local_max": 6.65,
+            "objective_gap": 1.91e-05,
+            "relative_gap": 2.16e-05
+          },
+          {
+            "station": "S3",
+            "regime": "eq4",
+            "rank": 1,
+            "m_reported": 6.63,
+            "m_local_max": 6.67,
+            "objective_gap": 6.01e-05,
+            "relative_gap": 6.52e-05
+          },
+          {
+            "station": "S6",
+            "regime": "eff",
+            "rank": 1,
+            "m_reported": 5.32,
+            "m_local_max": 5.36,
+            "objective_gap": 1.3e-05,
+            "relative_gap": 1.43e-05
+          }
+        ],
+        "closest": {
+          "solve": "S1 eq4",
+          "n_local_maxima": 2,
+          "max_relative_gap": 1.9e-05,
+          "relative_gap_bound": 2e-05,
+          "m_reported": 7.88,
+          "m_local_maxima": [
+            7.74,
+            7.77
+          ],
+          "runner_up_advocate_share": 0.35,
+          "runner_up_weight_gini": 0.19
+        },
+        "solves_with_several_local_maxima": "S1 eq4",
+        "combinations": 24,
+        "priorities_unchanged": "24/24",
+        "gap_statement_holds": "24/24"
+      }
+    },
+    "robustness": {
+      "reseed": "40 further panels under seeds 202604..202643, same generator and draw order, both regimes solved by the certified 1-D scan",
+      "reseed_swap_direction_preserved": "40/40",
+      "reseed_other_orders_unchanged": "33/40",
+      "reseed_reordered_pairs": [
+        "S4,S5",
+        "S4,S5,S6"
+      ],
+      "reseed_contested_moves_two_places": "7/40 (S5 and S6 keep their order)",
+      "fehr_schmidt_grid": "rho in {0.2, 0.3, 0.4, 0.5, 0.6}, vartheta in {0.0, 0.1, 0.2, 0.3, 0.4}, vartheta <= rho, 22 combinations, seed-202603 panel, equity regime solved by the certified 1-D scan",
+      "fehr_schmidt_swap_direction_preserved": "22/22",
+      "fehr_schmidt_S4_advocate_share_range": "0.4547 .. 0.4638",
+      "early_warning": {
+        "threshold": 0.5,
+        "contested_gap_min": 0.53,
+        "uncontested_gap_max": 0.33,
+        "panels_separated": "41/41 (the main panel and the re-seeded ones)"
+      },
+      "leveling_down": {
+        "mean_utility_rises_at": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ],
+        "mean_utility_falls_at": {
+          "S1": -0.00017
+        },
+        "max_abs_mean_utility_change_uncontested": {
+          "station": "S5",
+          "value": 0.00979
+        },
+        "max_abs_utility_gini_change_uncontested": {
+          "station": "S9",
+          "value": 0.01289
+        },
+        "contested_mean_utility": {
+          "consensus": 0.713,
+          "equity": 0.87
+        },
+        "contested_utility_gini": {
+          "consensus": 0.204,
+          "equity": 0.028
+        },
+        "contested_mean_overlap": {
+          "consensus": 0.75,
+          "equity": 0.62
+        },
+        "contested_min_overlap": {
+          "consensus": 0.23,
+          "equity": 0.48
+        },
+        "contested_overlap_gini": {
+          "consensus": 0.18,
+          "equity": 0.1
+        },
+        "mean_overlap_lower_under_equity_at": "every station (the consensus optimum maximizes the mean overlap and the two means differ at all 10)",
+        "overlap_leveling_down_at": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ],
+        "overlap_leveling_down_except": "S1",
+        "max_mean_overlap_fall_uncontested": {
+          "station": "S9",
+          "value": 0.048
+        },
+        "overlap_leveling_down_rule": "prop:consensus-fairness(iii) with the Gini index I_4 as the inequality measure (the index of the case's welfare criterion; the classification is index-specific): the Gini of the overlap profile falls and the mean (total) overlap falls from the consensus to the equity optimum; overlap_leveling_down_at/_except classify the reported optima",
+        "overlap_leveling_down_over_near_tie_combinations": {
+          "count_range": "7 .. 9",
+          "always": [
+            "S2",
+            "S4",
+            "S5",
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ],
+          "never": [
+            "S1"
+          ],
+          "turns_on_the_choice": [
+            "S3",
+            "S6"
+          ],
+          "mean_overlap_lower_count_range": "8 .. 10"
+        }
+      }
+    }
+  },
+  "hm_panel_anchor": {
+    "purpose": "cross-check only -- these numbers are ALREADY printed in Chapter 5 (Table tab:hmpanel) and are now backed by the generated panel of fig5-3_loo.xlsx",
+    "human_only_mean_crps": 0.45,
+    "collaborative_mean_crps": 0.41,
+    "human_weight_share": 0.56,
+    "machine_weight_share": 0.44,
+    "overconfident_machines": {
+      "M4": {
+        "leave_one_out_signs_cal_res": "(-, +)"
+      },
+      "M5": {
+        "leave_one_out_signs_cal_res": "(-, +)"
+      }
+    }
+  },
+  "chapter2_running_example": {
+    "alpha_star": 0.75,
+    "alpha_star_aggregate": {
+      "mu": 5.444202059691159,
+      "sigma": 0.8720207160864268
+    },
+    "alpha_star_weights_midpoint": [
+      0.08318030414819505,
+      0.08318030414819494,
+      0.1105626679875494,
+      0.7230767237160606
+    ],
+    "A_range": [
+      2.254921922072601,
+      2.873947929117288
+    ],
+    "V_range": [
+      0.6399999999999999,
+      1.44
+    ]
+  },
+  "case_i": {
+    "case": "I",
+    "title": "Building information modeling maturity with a fairness objective",
+    "published_application": "chen2023bimdc",
+    "full_assessment": {
+      "groups": [
+        {
+          "group": "G1 (junior)",
+          "Omega": 0.1687127946053721
+        },
+        {
+          "group": "G2 (mid-career)",
+          "Omega": 0.3046151229880996
+        },
+        {
+          "group": "G3 (senior)",
+          "Omega": 0.5266720824065282
+        }
+      ],
+      "q4_collective": {
+        "mu": 4.996114650274933,
+        "sigma": 1.067629107886406
+      },
+      "q4_profile_fit": {
+        "mu": 4.98,
+        "sigma": 1.307516730294492
+      },
+      "dimensions": [
+        {
+          "dimension": "Technology",
+          "weight": 0.5714285714285714,
+          "mu": 4.843910299224666,
+          "sigma": 1.118916057443095
+        },
+        {
+          "dimension": "Organization",
+          "weight": 0.2857142857142858,
+          "mu": 5.870491089719831,
+          "sigma": 1.132102152070007
+        },
+        {
+          "dimension": "Policy",
+          "weight": 0.1428571428571428,
+          "mu": 5.677407861795492,
+          "sigma": 1.120365502432368
+        }
+      ],
+      "global": {
+        "mu": 5.256290176876259,
+        "sigma": 1.12289057662068
+      }
+    },
+    "fairness_panel": {
+      "0.0": {
+        "aggregate": [
+          6.800000000000001,
+          1.1
+        ],
+        "weight_on_dissenter": 0.0,
+        "minimum_overlap": 0.3794304596033998,
+        "mean_overlap": 0.8108986482751998,
+        "collective_fairness": 0.795162605702664
+      },
+      "0.1": {
+        "aggregate": [
+          6.800000000000001,
+          1.1
+        ],
+        "weight_on_dissenter": 0.0,
+        "minimum_overlap": 0.3794304596033997,
+        "mean_overlap": 0.8108986482751998,
+        "collective_fairness": 0.795162605702664
+      },
+      "0.2": {
+        "aggregate": [
+          6.800000000000001,
+          1.1
+        ],
+        "weight_on_dissenter": 0.0,
+        "minimum_overlap": 0.3794304596033998,
+        "mean_overlap": 0.8108986482751998,
+        "collective_fairness": 0.795162605702664
+      },
+      "0.3": {
+        "aggregate": [
+          6.800000000005666,
+          1.100000000001134
+        ],
+        "weight_on_dissenter": 0.0,
+        "minimum_overlap": 0.3794304596023745,
+        "mean_overlap": 0.8108986482760062,
+        "collective_fairness": 0.7951626057028209
+      },
+      "0.4": {
+        "aggregate": [
+          6.807341216457452,
+          1.10146824329153
+        ],
+        "weight_on_dissenter": 2.722376800176206e-16,
+        "minimum_overlap": 0.3781040524683441,
+        "mean_overlap": 0.8114146651335057,
+        "collective_fairness": 0.7958120003826258
+      },
+      "0.5": {
+        "aggregate": [
+          6.149999999686282,
+          1.147368421085655
+        ],
+        "weight_on_dissenter": 0.2368421054282722,
+        "minimum_overlap": 0.5513550753610721,
+        "mean_overlap": 0.6772564092917708,
+        "collective_fairness": 0.8789284916641067
+      },
+      "0.6": {
+        "aggregate": [
+          6.02370944899951,
+          1.16066216326321
+        ],
+        "weight_on_dissenter": 0.3033108163160476,
+        "minimum_overlap": 0.5201685026945728,
+        "mean_overlap": 0.6503863358259412,
+        "collective_fairness": 0.8920088905899475
+      }
+    }
+  },
+  "case_ii": {
+    "case": "II",
+    "title": "Digital-transformation barriers in SMCEs under five inequality indices",
+    "published_application": "chen2024socialwelfare",
+    "ranking": [
+      "B14",
+      "B6",
+      "B1",
+      "B10",
+      "B7",
+      "B5",
+      "B4",
+      "B8",
+      "B12",
+      "B3",
+      "B2",
+      "B11",
+      "B13",
+      "B9"
+    ],
+    "average_collective_mean": {
+      "B14": 4.117090698363376,
+      "B6": 3.994068522155216,
+      "B1": 3.880388560261891,
+      "B10": 3.781498652190321,
+      "B7": 3.733996261069354,
+      "B5": 3.723215845836964,
+      "B4": 3.560551398922835,
+      "B8": 3.518767849421221,
+      "B12": 3.322911282323187,
+      "B3": 3.245339999771869,
+      "B2": 3.071575889875437,
+      "B11": 2.781677466026663,
+      "B13": 2.503086216422037,
+      "B9": 2.290816754346168
+    },
+    "max_spread_across_indices": {
+      "value": 0.2117870908779822,
+      "barrier": "B2"
+    }
+  },
+  "vignette_v": {
+    "vignette": "V",
+    "title": "Aggregating human and machine forecasts (exploratory)",
+    "mean_crps": {
+      "optimized human-only mean CRPS": 0.34672168056872,
+      "equal-weight human-machine mean CRPS": 0.2723586921735339,
+      "optimized human-machine mean CRPS": 0.2428340922971232
+    },
+    "weight_shares": {
+      "human": 0.2386459593213467,
+      "machine": 0.7613540406786532
+    },
+    "weights_full_pool": {
+      "H1": 0.09565004554689926,
+      "H2": 0.118022499364397,
+      "H3": 0.0,
+      "H4": 0.02497341441005043,
+      "M1": 0.2454599371477209,
+      "M2": 0.2454598995041633,
+      "M3": 0.02497426508936971,
+      "M4": 0.2454599389373993
+    },
+    "largest_weight": {
+      "value": 0.2454599389373993,
+      "held_by": [
+        "M4"
+      ]
+    },
+    "largest_leave_one_out_mean_crps": 0.2576582730549034
+  },
+  "printed_tables": [
+    {
+      "label": "tab:elicitation",
+      "file": "chapter2.tex",
+      "source": "tab2-1_running_example_percentiles.xlsx / table_2_1",
+      "rows": [
+        {
+          "row": "Expert 1",
+          "cells": [
+            [
+              1
+            ],
+            2.4,
+            3.3,
+            4.0,
+            4.7,
+            5.6,
+            [
+              4.0,
+              1.0,
+              2
+            ]
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "Expert 2",
+          "cells": [
+            [
+              2
+            ],
+            3.0,
+            4.2,
+            5.0,
+            5.8,
+            7.0,
+            [
+              5.0,
+              1.2,
+              2
+            ]
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "Expert 3",
+          "cells": [
+            [
+              3
+            ],
+            4.9,
+            5.8,
+            6.5,
+            7.2,
+            8.1,
+            [
+              6.5,
+              1.0,
+              2
+            ]
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "Expert 4",
+          "cells": [
+            [
+              4
+            ],
+            4.2,
+            5.0,
+            5.5,
+            6.0,
+            6.8,
+            [
+              5.5,
+              0.8,
+              2
+            ]
+          ],
+          "key": {
+            "id": 4
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:biobj-example",
+      "file": "chapter2.tex",
+      "source": "tab2-5_biobjective_example.xlsx / table_2_5",
+      "rows": [
+        {
+          "row": "equal weights",
+          "cells": [
+            [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            null,
+            2.797940669528295,
+            1.0,
+            [
+              5.25,
+              1.0,
+              2
+            ]
+          ]
+        },
+        {
+          "row": "maximum consensus",
+          "cells": [
+            [
+              9.03540473929325e-16,
+              0.9999999999999968,
+              2.372546749737143e-15,
+              0.0
+            ],
+            null,
+            2.873947929117288,
+            1.439999999999999,
+            [
+              5.000000000000003,
+              1.2,
+              2
+            ]
+          ]
+        },
+        {
+          "row": "minimum variance",
+          "cells": [
+            [
+              0.0,
+              0.0,
+              1.665334536937735e-16,
+              0.9999999999999998
+            ],
+            null,
+            2.710968567133797,
+            0.6399999999999999,
+            [
+              5.5,
+              0.7999999999999999,
+              2
+            ]
+          ]
+        },
+        {
+          "row": "balance, alpha=0.75",
+          "cells": [
+            [
+              0.08318030414819505,
+              0.08318030414819494,
+              0.1105626679875494,
+              0.7230767237160606
+            ],
+            [
+              0.75
+            ],
+            2.744848588177967,
+            0.7604201292838847,
+            [
+              5.444202059691159,
+              0.8720207160864268,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "tab:hmpanel",
+      "file": "chapter5.tex",
+      "source": "fig5-3_loo.xlsx / results, config (rounded copy in tab5-3_hm_panel.xlsx)",
+      "rows": [
+        {
+          "row": "human-only aggregate",
+          "cells": [
+            null,
+            null,
+            0.4501634806937547
+          ],
+          "key": {
+            "text": "human-only aggregate"
+          }
+        },
+        {
+          "row": "collaborative aggregate",
+          "cells": [
+            null,
+            null,
+            [
+              0.4093440757259713,
+              {
+                "value": -9.067684678658505,
+                "decimals": 0
+              }
+            ]
+          ],
+          "key": {
+            "text": "collaborative aggregate"
+          }
+        },
+        {
+          "row": "human subpanel",
+          "cells": [
+            [
+              5
+            ],
+            0.5571256195700474,
+            null
+          ],
+          "key": {
+            "text": "human subpanel"
+          }
+        },
+        {
+          "row": "machine subpanel",
+          "cells": [
+            [
+              5
+            ],
+            0.4428743804299528,
+            null
+          ],
+          "key": {
+            "text": "machine subpanel"
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:bim-elicit",
+      "file": "chapter6.tex",
+      "source": "fig6-1_bim_case.xlsx / elicitation_q4, derived",
+      "rows": [
+        {
+          "row": "elicited profile",
+          "cells": [
+            null,
+            0.0,
+            0.01,
+            0.05,
+            0.16,
+            0.29,
+            0.28,
+            0.15,
+            0.05,
+            0.01,
+            0.0
+          ]
+        },
+        {
+          "row": "normal fit",
+          "cells": [
+            [
+              4.98,
+              1.307516730294492,
+              2
+            ],
+            0.00116751587556368,
+            0.01016216721383079,
+            0.05364254348598523,
+            0.1618019878501167,
+            0.279327837116333,
+            0.2762333353624219,
+            0.1564809963495112,
+            0.05073183840427564,
+            0.009397607348749837,
+            0.001054170993212034
+          ]
+        }
+      ]
+    },
+    {
+      "label": "tab:bim-groups",
+      "file": "chapter6.tex",
+      "source": "fig6-1_bim_case.xlsx / groups, config",
+      "rows": [
+        {
+          "row": "G1 (junior)",
+          "cells": [
+            [
+              1
+            ],
+            [
+              1,
+              4,
+              2,
+              4,
+              2,
+              3,
+              2,
+              3
+            ],
+            6,
+            0.1687127946053721
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "G2 (mid-career)",
+          "cells": [
+            [
+              2
+            ],
+            [
+              5,
+              9,
+              8,
+              12,
+              1,
+              2,
+              1,
+              2
+            ],
+            7,
+            0.3046151229880996
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "G3 (senior)",
+          "cells": [
+            [
+              3
+            ],
+            [
+              11,
+              16,
+              5,
+              8,
+              3,
+              5,
+              3,
+              4
+            ],
+            7,
+            0.5266720824065282
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "total",
+          "cells": [
+            null,
+            20,
+            0.9999999999999999
+          ],
+          "key": {
+            "text": "total"
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:bim-dimensions",
+      "file": "chapter6.tex",
+      "source": "fig6-1_bim_case.xlsx / dimensions, derived",
+      "rows": [
+        {
+          "row": "Technology",
+          "cells": [
+            "Technology",
+            0.5714285714285714,
+            [
+              4.843910299224666,
+              1.118916057443095,
+              2
+            ],
+            "managed (weakest)"
+          ],
+          "key": {
+            "text": "technology"
+          }
+        },
+        {
+          "row": "Organization",
+          "cells": [
+            "Organization",
+            0.2857142857142858,
+            [
+              5.870491089719831,
+              1.132102152070007,
+              2
+            ],
+            "defined (strongest)"
+          ],
+          "key": {
+            "text": "organization"
+          }
+        },
+        {
+          "row": "Policy",
+          "cells": [
+            "Policy",
+            0.1428571428571428,
+            [
+              5.677407861795492,
+              1.120365502432368,
+              2
+            ],
+            "defined"
+          ],
+          "key": {
+            "text": "policy"
+          }
+        },
+        {
+          "row": "global",
+          "cells": [
+            null,
+            null,
+            [
+              5.256290176876259,
+              1.12289057662068,
+              2
+            ],
+            null
+          ],
+          "key": {
+            "text": "global"
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:bim",
+      "file": "chapter6.tex",
+      "source": "tab6-9_bim_results.xlsx / table_6_9 (the delta = 0 and 0.5 rows of fig6-4_bim_tradeoff.xlsx)",
+      "rows": [
+        {
+          "row": "aggregate distribution",
+          "cells": [
+            "aggregate distribution",
+            [
+              6.8,
+              1.1,
+              2
+            ],
+            [
+              6.15,
+              1.147368,
+              2
+            ]
+          ],
+          "key": {
+            "text": "aggregate distribution"
+          }
+        },
+        {
+          "row": "weight on dissenter (expert 5)",
+          "cells": [
+            "weight on dissenter (expert 5)",
+            0.0,
+            0.2368421054282722
+          ],
+          "key": {
+            "text": "weight on dissenter"
+          }
+        },
+        {
+          "row": "minimum overlap",
+          "cells": [
+            "minimum overlap",
+            0.3794304596033998,
+            0.5513550753610721
+          ],
+          "key": {
+            "text": "minimum overlap"
+          }
+        },
+        {
+          "row": "mean overlap (consensus)",
+          "cells": [
+            "mean overlap (consensus)",
+            0.8108986482751998,
+            0.6772564092917708
+          ],
+          "key": {
+            "text": "mean overlap"
+          }
+        },
+        {
+          "row": "collective fairness",
+          "cells": [
+            "collective fairness",
+            0.795162605702664,
+            0.8789284916641067
+          ],
+          "key": {
+            "text": "collective fairness"
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:dt-elicit",
+      "file": "chapter6.tex",
+      "source": "fig6-5_dt_case.xlsx / elicitation_b1, config elicit_fit_*",
+      "rows": [
+        {
+          "row": "elicited profile",
+          "cells": [
+            null,
+            0.0001755296709429643,
+            0.008040835798096134,
+            0.1071731069842072,
+            0.4156276406981663,
+            0.4689828868485875
+          ]
+        },
+        {
+          "row": "fitted truncated Weibull",
+          "cells": [
+            null,
+            [
+              6.294595722846377,
+              4.240174030044889,
+              3.862959055334685
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "tab:dt-swf-results",
+      "file": "chapter6.tex",
+      "source": "fig6-5_dt_case.xlsx / matrix",
+      "rows": [
+        {
+          "row": "B14",
+          "cells": [
+            [
+              14
+            ],
+            "E",
+            4.080523788771438,
+            4.130661079089225,
+            4.114445596231855,
+            4.129161948635137,
+            4.130661079089225,
+            4.117090698363376,
+            1
+          ],
+          "key": {
+            "id": 14
+          }
+        },
+        {
+          "row": "B6",
+          "cells": [
+            [
+              6
+            ],
+            "O",
+            3.913364764638135,
+            4.017211103825465,
+            3.990686959220791,
+            4.027057796164617,
+            4.02202198692707,
+            3.994068522155216,
+            2
+          ],
+          "key": {
+            "id": 6
+          }
+        },
+        {
+          "row": "B1",
+          "cells": [
+            [
+              1
+            ],
+            "T",
+            3.806575952437997,
+            3.904294746473206,
+            3.890055503935137,
+            3.899659862796484,
+            3.901356735666636,
+            3.880388560261891,
+            3
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "B10",
+          "cells": [
+            [
+              10
+            ],
+            "O",
+            3.779680668222634,
+            3.781569943669915,
+            3.784992037167054,
+            3.781569943669915,
+            3.779680668222086,
+            3.781498652190321,
+            4
+          ],
+          "key": {
+            "id": 10
+          }
+        },
+        {
+          "row": "B7",
+          "cells": [
+            [
+              7
+            ],
+            "O",
+            3.703907425852888,
+            3.751836428907759,
+            3.730544281906127,
+            3.737685116360845,
+            3.746008052319151,
+            3.733996261069354,
+            5
+          ],
+          "key": {
+            "id": 7
+          }
+        },
+        {
+          "row": "B5",
+          "cells": [
+            [
+              5
+            ],
+            "O",
+            3.678755166490934,
+            3.73610074161216,
+            3.728315602683865,
+            3.736806976785701,
+            3.73610074161216,
+            3.723215845836964,
+            6
+          ],
+          "key": {
+            "id": 5
+          }
+        },
+        {
+          "row": "B4",
+          "cells": [
+            [
+              4
+            ],
+            "T",
+            3.575514148722323,
+            3.532386227402347,
+            3.560429903888646,
+            3.570260901438131,
+            3.564165813162729,
+            3.560551398922835,
+            7
+          ],
+          "key": {
+            "id": 4
+          }
+        },
+        {
+          "row": "B8",
+          "cells": [
+            [
+              8
+            ],
+            "O",
+            3.489731921947359,
+            3.531929625546257,
+            3.504178825752854,
+            3.533999436929818,
+            3.533999436929818,
+            3.518767849421221,
+            8
+          ],
+          "key": {
+            "id": 8
+          }
+        },
+        {
+          "row": "B12",
+          "cells": [
+            [
+              12
+            ],
+            "E",
+            3.374839465701803,
+            3.311278795482576,
+            3.319153475549413,
+            3.300264891248577,
+            3.309019783633562,
+            3.322911282323187,
+            9
+          ],
+          "key": {
+            "id": 12
+          }
+        },
+        {
+          "row": "B3",
+          "cells": [
+            [
+              3
+            ],
+            "T",
+            3.13545656098907,
+            3.28595861861971,
+            3.261646730690763,
+            3.271819044279902,
+            3.271819044279902,
+            3.245339999771869,
+            10
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "B2",
+          "cells": [
+            [
+              2
+            ],
+            "T",
+            2.927413046788606,
+            3.139200137666588,
+            3.027544848747969,
+            3.124521278507431,
+            3.139200137666588,
+            3.071575889875437,
+            11
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "B11",
+          "cells": [
+            [
+              11
+            ],
+            "E",
+            2.820758555986671,
+            2.767881586166447,
+            2.780367039607461,
+            2.76788158615592,
+            2.771498562216815,
+            2.781677466026663,
+            12
+          ],
+          "key": {
+            "id": 11
+          }
+        },
+        {
+          "row": "B13",
+          "cells": [
+            [
+              13
+            ],
+            "E",
+            2.506764949736878,
+            2.49675195605952,
+            2.50892651232365,
+            2.50427358358798,
+            2.498714080402158,
+            2.503086216422037,
+            13
+          ],
+          "key": {
+            "id": 13
+          }
+        },
+        {
+          "row": "B9",
+          "cells": [
+            [
+              9
+            ],
+            "O",
+            2.35548417516498,
+            2.273734849749439,
+            2.284710541988005,
+            2.271482229448607,
+            2.268671975379807,
+            2.290816754346168,
+            14
+          ],
+          "key": {
+            "id": 9
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:bdt-groups",
+      "file": "chapter6.tex",
+      "source": "fig6-8_bdt_case.xlsx / groups",
+      "rows": [
+        {
+          "row": "G1",
+          "cells": [
+            [
+              1
+            ],
+            "mixed experience",
+            4,
+            0.281702640895305
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "G2",
+          "cells": [
+            [
+              2
+            ],
+            "junior, broad but shallow project record",
+            6,
+            0.1914258335916295
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "G3",
+          "cells": [
+            [
+              3
+            ],
+            "senior, long experience and high credentials",
+            5,
+            0.5268715255130654
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "total",
+          "cells": [
+            null,
+            15,
+            0.9999999999999999
+          ],
+          "key": {
+            "text": "total"
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:bdt-results",
+      "file": "chapter6.tex",
+      "source": "fig6-8_bdt_case.xlsx / dimensions, config",
+      "rows": [
+        {
+          "row": "D1",
+          "cells": [
+            [
+              1
+            ],
+            0.2241379310344828,
+            2.836659565133606,
+            "Primary BDT"
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "D2",
+          "cells": [
+            [
+              2
+            ],
+            0.1206896551724138,
+            2.727420494941017,
+            "Primary BDT"
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "D3",
+          "cells": [
+            [
+              3
+            ],
+            0.2241379310344828,
+            2.758794802268164,
+            "Primary BDT"
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "D4",
+          "cells": [
+            [
+              4
+            ],
+            0.1206896551724138,
+            2.624420173299782,
+            "Primary BDT"
+          ],
+          "key": {
+            "id": 4
+          }
+        },
+        {
+          "row": "D5",
+          "cells": [
+            [
+              5
+            ],
+            0.1206896551724138,
+            2.577077029299173,
+            "Primary BDT"
+          ],
+          "key": {
+            "id": 5
+          }
+        },
+        {
+          "row": "D6",
+          "cells": [
+            [
+              6
+            ],
+            0.06896551724137931,
+            2.493049848479878,
+            "Primary BDT (lowest)"
+          ],
+          "key": {
+            "id": 6
+          }
+        },
+        {
+          "row": "D7",
+          "cells": [
+            [
+              7
+            ],
+            0.1206896551724138,
+            2.903141580707087,
+            "Primary BDT (highest)"
+          ],
+          "key": {
+            "id": 7
+          }
+        },
+        {
+          "row": "global",
+          "cells": [
+            null,
+            null,
+            2.733405536515033,
+            "Primary BDT"
+          ],
+          "key": {
+            "text": "global"
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:rt-stations",
+      "file": "chapter6.tex",
+      "source": "fig6-11_rt_case.xlsx / stations",
+      "rows": [
+        {
+          "row": "S1",
+          "cells": [
+            [
+              1
+            ],
+            "Central Exchange",
+            8.0,
+            7.8,
+            7.6
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "S2",
+          "cells": [
+            [
+              2
+            ],
+            "Civic Plaza",
+            7.4,
+            7.2,
+            7.0
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "S3",
+          "cells": [
+            [
+              3
+            ],
+            "Riverside",
+            6.7,
+            6.6,
+            6.4
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "S4",
+          "cells": [
+            [
+              4
+            ],
+            "Northgate Interchange",
+            6.5,
+            6.3,
+            4.5
+          ],
+          "key": {
+            "id": 4
+          }
+        },
+        {
+          "row": "S5",
+          "cells": [
+            [
+              5
+            ],
+            "University Park",
+            6.0,
+            5.9,
+            5.8
+          ],
+          "key": {
+            "id": 5
+          }
+        },
+        {
+          "row": "S6",
+          "cells": [
+            [
+              6
+            ],
+            "Harbor View",
+            5.4,
+            5.3,
+            5.2
+          ],
+          "key": {
+            "id": 6
+          }
+        },
+        {
+          "row": "S7",
+          "cells": [
+            [
+              7
+            ],
+            "Meadow East",
+            4.9,
+            4.8,
+            4.7
+          ],
+          "key": {
+            "id": 7
+          }
+        },
+        {
+          "row": "S8",
+          "cells": [
+            [
+              8
+            ],
+            "Old Town",
+            4.4,
+            4.3,
+            4.2
+          ],
+          "key": {
+            "id": 8
+          }
+        },
+        {
+          "row": "S9",
+          "cells": [
+            [
+              9
+            ],
+            "Westfield Depot",
+            3.9,
+            3.8,
+            3.6
+          ],
+          "key": {
+            "id": 9
+          }
+        },
+        {
+          "row": "S10",
+          "cells": [
+            [
+              10
+            ],
+            "Airport South",
+            3.3,
+            3.2,
+            3.1
+          ],
+          "key": {
+            "id": 10
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:rt-results",
+      "file": "chapter6.tex",
+      "source": "fig6-11_rt_case.xlsx / results (_eff = consensus-only)",
+      "rows": [
+        {
+          "row": "S1",
+          "cells": [
+            [
+              1
+            ],
+            "Central Exchange",
+            7.888863487596369,
+            7.876428642499238,
+            10,
+            10,
+            0.2281514206273393,
+            0.238559506745733,
+            0.03950833133654463,
+            0.02068760583622525
+          ],
+          "key": {
+            "id": 1
+          }
+        },
+        {
+          "row": "S2",
+          "cells": [
+            [
+              2
+            ],
+            "Civic Plaza",
+            7.089795347369773,
+            7.269466619692327,
+            9,
+            9,
+            0.2973337414233966,
+            0.162611360262289,
+            0.09702337411963657,
+            0.1791267800116707
+          ],
+          "key": {
+            "id": 2
+          }
+        },
+        {
+          "row": "S3",
+          "cells": [
+            [
+              3
+            ],
+            "Riverside",
+            6.690017837071074,
+            6.627035877618534,
+            8,
+            8,
+            0.2248635637688881,
+            0.2677709587686442,
+            0.0598594962809599,
+            0.04231946925730495
+          ],
+          "key": {
+            "id": 3
+          }
+        },
+        {
+          "row": "S4",
+          "cells": [
+            [
+              4
+            ],
+            "Northgate Interchange",
+            6.53717725343716,
+            5.544631627346865,
+            7,
+            6,
+            0.02796462736587024,
+            0.4628987760684027,
+            0.2904747189187364,
+            0.2781108836879435
+          ],
+          "key": {
+            "id": 4
+          }
+        },
+        {
+          "row": "S5",
+          "cells": [
+            [
+              5
+            ],
+            "University Park",
+            6.017891992499955,
+            5.924157029271251,
+            6,
+            7,
+            0.2027279168048543,
+            0.2565532484568617,
+            0.1608133824172053,
+            0.0222932855702134
+          ],
+          "key": {
+            "id": 5
+          }
+        },
+        {
+          "row": "S6",
+          "cells": [
+            [
+              6
+            ],
+            "Harbor View",
+            5.315667968975728,
+            5.338349612928125,
+            5,
+            5,
+            0.2686368288170956,
+            0.248464100132295,
+            0.04007608833734969,
+            0.00330275388477084
+          ],
+          "key": {
+            "id": 6
+          }
+        },
+        {
+          "row": "S7",
+          "cells": [
+            [
+              7
+            ],
+            "Meadow East",
+            4.881531372320728,
+            5.049021866788737,
+            4,
+            4,
+            0.2842094673100377,
+            0.1945728009938364,
+            0.1033172231761616,
+            0.1673976457408624
+          ],
+          "key": {
+            "id": 7
+          }
+        },
+        {
+          "row": "S8",
+          "cells": [
+            [
+              8
+            ],
+            "Old Town",
+            4.378966545098285,
+            4.417221957093492,
+            3,
+            3,
+            0.2513924469500566,
+            0.2298943008506192,
+            0.004285894526073339,
+            0.06188451626376511
+          ],
+          "key": {
+            "id": 8
+          }
+        },
+        {
+          "row": "S9",
+          "cells": [
+            [
+              9
+            ],
+            "Westfield Depot",
+            3.889259275151401,
+            3.55763054068768,
+            2,
+            2,
+            0.1662707834880219,
+            0.4769272261549653,
+            0.1401030766494458,
+            0.375465031111565
+          ],
+          "key": {
+            "id": 9
+          }
+        },
+        {
+          "row": "S10",
+          "cells": [
+            [
+              10
+            ],
+            "Airport South",
+            3.144822311551596,
+            3.210620941818148,
+            1,
+            1,
+            0.2509787779318656,
+            0.2490679034875903,
+            0.06329918950734921,
+            0.06028022481636674
+          ],
+          "key": {
+            "id": 10
+          }
+        }
+      ]
+    },
+    {
+      "label": "tab:hm-vignette",
+      "file": "chapter6.tex",
+      "source": "fig6-12_hm_calsharp.xlsx / aggregates",
+      "rows": [
+        {
+          "row": "optimized human-only mean CRPS",
+          "cells": [
+            "optimized human-only",
+            0.34672168056872,
+            0.3496083892904533,
+            null
+          ],
+          "key": {
+            "text": "optimized human-only"
+          }
+        },
+        {
+          "row": "equal-weight human-machine mean CRPS",
+          "cells": [
+            "equal-weight human-machine",
+            0.2723586921735339,
+            0.2791915726749475,
+            null
+          ],
+          "key": {
+            "text": "equal-weight human-machine"
+          }
+        },
+        {
+          "row": "optimized human-machine mean CRPS",
+          "cells": [
+            "optimized human-machine",
+            0.2428340922971232,
+            0.2577716336633968,
+            null
+          ],
+          "key": {
+            "text": "optimized human-machine"
+          }
+        }
+      ]
+    }
+  ],
+  "key_numbers": [
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "maximum-consensus variance",
+      "anchor": "mostdispersedaggregate(",
+      "text": "V=1.44",
+      "value": 1.439999999999999
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "minimum-variance variance",
+      "anchor": "mostdecisiveaggregate(",
+      "text": "V=0.64",
+      "value": 0.6399999999999999
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "alpha* aggregate",
+      "anchor": "interiorcompromisewithaggregate\\mathcalN",
+      "text": "(5.44,0.87^2)",
+      "value": [
+        5.444202059691159,
+        0.8720207160864268
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "alpha* consensus",
+      "anchor": "interiorcompromisewithaggregate\\mathcalN(#,#^2),",
+      "text": "A=2.74",
+      "value": 2.744848588177967
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "alpha* confidence",
+      "anchor": "interiorcompromisewithaggregate\\mathcalN(#,#^2),A=#,and",
+      "text": "V=0.76",
+      "value": 0.7604201292838847
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "alpha* level set, endpoint 1",
+      "anchor": "alinesegmentofthesimplex,herefrom",
+      "text": "(0,0.166,0.027,0.806)",
+      "value": [
+        0.0,
+        0.1663606082963899,
+        0.02738236383935428,
+        0.8062570278642558
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "alpha* level set, endpoint 2",
+      "anchor": "alinesegmentofthesimplex,herefrom(#,#,#,#)to",
+      "text": "(0.166,0,0.194,0.640)",
+      "value": [
+        0.1663606082963901,
+        0.0,
+        0.1937429721357445,
+        0.6398964195678654
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "alpha* reported midpoint",
+      "anchor": "themidpointofthatsegment,\\mathbfw^*=",
+      "text": "(0.083,0.083,0.111,0.723)",
+      "value": [
+        0.08318030414819505,
+        0.08318030414819494,
+        0.1105626679875494,
+        0.7230767237160606
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "solved consensus range",
+      "anchor": "normalizationusingthesolvedextrema",
+      "text": "A\\in[2.25,2.87]",
+      "value": [
+        2.254921922072601,
+        2.873947929117288
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-biobjective",
+      "scope": "prose",
+      "what": "solved confidence range",
+      "anchor": "normalizationusingthesolvedextremaA\\in[#,#]and",
+      "text": "V\\in[0.64,1.44]",
+      "value": [
+        0.6399999999999999,
+        1.44
+      ]
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "panel size N",
+      "anchor": "ForapanelofN=",
+      "text": "30",
+      "value": 30
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "number of outcomes T",
+      "anchor": "expertsscoredagainstT=",
+      "text": "40",
+      "value": 40
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "grid levels L",
+      "anchor": "outcomesonanL=",
+      "text": "19",
+      "value": 19
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "pinball epigraph variables TL",
+      "anchor": "thereareTL=",
+      "text": "760",
+      "value": 760
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "N in the pair count",
+      "anchor": "pinballvariablesand",
+      "text": "30",
+      "value": 30
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "N - 1 in the pair count",
+      "anchor": "pinballvariablesand#\\times",
+      "text": "29",
+      "value": 29
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "pair variables N(N-1)/2",
+      "anchor": "pinballvariablesand#\\times#/2=",
+      "text": "435",
+      "value": 435
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "variables N + TL + N(N-1)/2",
+      "anchor": "hence#+#+#=",
+      "text": "1,225",
+      "value": 1225
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "pinball rows 2TL",
+      "anchor": "togetherwith#\\times#=",
+      "text": "1,520",
+      "value": 1520
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "pair rows N(N-1)",
+      "anchor": "pinballrowsand#\\times#=",
+      "text": "870",
+      "value": 870
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "nonzeros per pinball row N + 1",
+      "anchor": "containsroughly#,#\\times",
+      "text": "31",
+      "value": 31
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "pinball nonzeros",
+      "anchor": "containsroughly#,#\\times#=",
+      "text": "47,120",
+      "value": 47120
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-convex",
+      "scope": "prose",
+      "what": "large panel size",
+      "anchor": "halfamillionauxiliaryvariablesatN=",
+      "text": "1,000",
+      "value": 1000
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "Figure 4.3: smallest panel size",
+      "anchor": "forpanelsizesfromN=",
+      "text": "10",
+      "value": 10
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "Figure 4.3: largest panel size",
+      "anchor": "forpanelsizesfromN=#toN=",
+      "text": "10,000",
+      "value": 10000
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "Figure 4.3: panel size of the printed saving",
+      "anchor": "withthepanelsize,andatN=",
+      "text": "10,000",
+      "value": 10000
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "Figure 4.3: flat over two-stage interaction count at the largest panel",
+      "anchor": "therepresentative-levelhierarchyrequiresabout",
+      "text": "252",
+      "value": 251.960448332863
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: fairness maximizer, mean overlap",
+      "anchor": "Thefrontrunsfromthefairnessmaximizer,withmeanoverlap",
+      "text": "0.646",
+      "value": 0.6457741945204012
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: fairness maximizer, fairness",
+      "anchor": "Thefrontrunsfromthefairnessmaximizer,withmeanoverlap#andfairness",
+      "text": "0.906",
+      "value": 0.9062100837396845
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: consensus maximizer, mean overlap",
+      "anchor": "totheconsensusmaximizer,with",
+      "text": "0.830",
+      "value": 0.8303601719869318
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: consensus maximizer, fairness",
+      "anchor": "totheconsensusmaximizer,with#and",
+      "text": "0.795",
+      "value": 0.795225795878187
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: unsupported stretch, lower end",
+      "anchor": "liesbetweenmeanoverlapsof",
+      "text": "0.693",
+      "value": 0.6925346568201738
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: unsupported stretch, upper end",
+      "anchor": "liesbetweenmeanoverlapsof#and",
+      "text": "0.805",
+      "value": 0.8050383916562472
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: largest gap below the concave majorant",
+      "anchor": "byasmuchas",
+      "text": "0.0042",
+      "value": 0.00420634942929432
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: mean overlap at the largest gap",
+      "anchor": "byasmuchas#at\\barA=",
+      "text": "0.758",
+      "value": 0.7581189337820019
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: fairness range of the front",
+      "anchor": "againstafairnessrangeof",
+      "text": "0.111",
+      "value": 0.1109842878614975
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: last weighted sum below the stretch, mean overlap",
+      "anchor": "returningtheendatmeanoverlap",
+      "text": "0.693",
+      "value": 0.6925346565701579
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: last weighted sum below the stretch, lambda_1",
+      "anchor": "returningtheendatmeanoverlap#at\\lambda_1=",
+      "text": "0.46",
+      "value": 0.46
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: first weighted sum above the stretch, mean overlap",
+      "anchor": "andtheendat",
+      "text": "0.805",
+      "value": 0.8050383916562472
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: first weighted sum above the stretch, lambda_1",
+      "anchor": "andtheendat#at\\lambda_1=",
+      "text": "0.48",
+      "value": 0.48
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: weighting at which the weighted sum ties the two ends",
+      "anchor": "indifferentbetweenthemat\\lambda_1=",
+      "text": "0.467",
+      "value": 0.4666614569378046
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: equally spaced floors",
+      "anchor": "Itissolvedat",
+      "text": "161",
+      "value": 161
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: refinement floors",
+      "anchor": "Itissolvedat#equallyspacedfloorsandat",
+      "text": "40",
+      "value": 40
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: weighted sums",
+      "anchor": "simplex,andofthe",
+      "text": "51",
+      "value": 51
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: experts of the panel (in words)",
+      "anchor": "showsthedistinctiononafrontcomputedforthe",
+      "text": "seven",
+      "value": 7,
+      "follow": "-expertfairnesspanel"
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: further dents (in words)",
+      "anchor": "yeteveryefficientpointinsideitisunsupported.",
+      "text": "Two",
+      "value": 2,
+      "follow": "furtherdents"
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-pareto",
+      "scope": "prose",
+      "what": "Figure 4.4: first weightings at the fairness maximizer (in words)",
+      "anchor": "Thefirst",
+      "text": "ten",
+      "value": 10,
+      "follow": "weightingsallreturnthefairnessmaximizer"
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "human weight share (percent)",
+      "anchor": "assignsabout",
+      "text": "56\\%",
+      "value": 0.5571256195700474
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "machine weight share (percent)",
+      "anchor": "oftheweighttothehumanexpertsand",
+      "text": "44\\%",
+      "value": 0.4428743804299528
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "CRPS gain (percent)",
+      "anchor": "meanCRPSabout",
+      "text": "9\\%",
+      "value": -9.067684678658505
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "human-only mean CRPS",
+      "anchor": "sothatthehuman-onlyaggregatescores",
+      "text": "0.45",
+      "value": 0.4501634806937547
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "random SLSQP starts per solve",
+      "anchor": "fromtheequal-weightvectorand",
+      "text": "thirty",
+      "value": 30,
+      "follow": "randomsimplexstarts"
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "seed of the SLSQP starts",
+      "anchor": "randomsimplexstartsunderseed",
+      "text": "202603",
+      "value": 202603
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-application",
+      "scope": "prose",
+      "what": "bound on the SLSQP improvement",
+      "anchor": "improvesonthereturnedvaluebymorethan",
+      "text": "10^-8",
+      "value": 1e-08
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "reliability floor at L = 9 (per unit sd)",
+      "anchor": "thatfloorisabout",
+      "text": "0.011",
+      "value": 0.01112623125647146
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "grid size of the reliability floor (9)",
+      "anchor": "standarddeviationofaperfectlycalibratednormalforecastatL=",
+      "text": "9",
+      "value": 9
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "reliability floor at L = 19 (per unit sd)",
+      "anchor": "thatfloorisabout#,",
+      "text": "0.0028",
+      "value": 0.002799677408894594
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "grid size of the reliability floor (19)",
+      "anchor": "standarddeviationofaperfectlycalibratednormalforecastatL=#,",
+      "text": "19",
+      "value": 19
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "reliability floor at L = 39 (per unit sd)",
+      "anchor": "thatfloorisabout#,#,",
+      "text": "0.00073",
+      "value": 0.0007262628326497464
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "grid size of the reliability floor (39)",
+      "anchor": "standarddeviationofaperfectlycalibratednormalforecastatL=#,#,",
+      "text": "39",
+      "value": 39
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "reliability floor at L = 99 (per unit sd)",
+      "anchor": "thatfloorisabout#,#,#,and",
+      "text": "0.00012",
+      "value": 0.0001244430494298524
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-loo",
+      "scope": "prose",
+      "what": "grid size of the reliability floor (99)",
+      "anchor": "standarddeviationofaperfectlycalibratednormalforecastatL=#,#,#,and",
+      "text": "99",
+      "value": 99
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: sigma_1",
+      "anchor": "Take\\sigma_1=",
+      "text": "1",
+      "value": 1.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: sigma_2",
+      "anchor": "Take\\sigma_1=#,\\sigma_2=",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: rho",
+      "anchor": "Take\\sigma_1=#,\\sigma_2=#,and\\rho=",
+      "text": "0.8",
+      "value": 0.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: sigma_1^2",
+      "anchor": "Thedenominatoris",
+      "text": "1",
+      "value": 1.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: sigma_2^2",
+      "anchor": "Thedenominatoris#+",
+      "text": "4",
+      "value": 4.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: 2 rho sigma_1 sigma_2",
+      "anchor": "Thedenominatoris#+#-",
+      "text": "3.2",
+      "value": 3.2
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: denominator",
+      "anchor": "Thedenominatoris#+#-#=",
+      "text": "1.8",
+      "value": 1.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: numerator of w_1",
+      "anchor": "sow_1=",
+      "text": "2.4",
+      "value": 2.4
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: denominator (under w_1)",
+      "anchor": "sow_1=#/",
+      "text": "1.8",
+      "value": 1.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: w_1",
+      "anchor": "sow_1=#/#=",
+      "text": "4/3",
+      "value": 1.333333333333333
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: numerator of w_2",
+      "anchor": "andw_2=",
+      "text": "-0.6",
+      "value": -0.6
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: denominator (under w_2)",
+      "anchor": "andw_2=#/",
+      "text": "1.8",
+      "value": 1.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: w_2",
+      "anchor": "andw_2=#/#=",
+      "text": "-1/3",
+      "value": -0.3333333333333333
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: denominator (under the posterior variance)",
+      "anchor": "posteriorvarianceis\\sigma_1^2\\sigma_2^2(1-\\rho^2)/",
+      "text": "1.8",
+      "value": 1.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: sigma_1^2 sigma_2^2 (1 - rho^2)",
+      "anchor": "posteriorvarianceis\\sigma_1^2\\sigma_2^2(1-\\rho^2)/#=",
+      "text": "1.44",
+      "value": 1.44
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: denominator (under the posterior variance, again)",
+      "anchor": "posteriorvarianceis\\sigma_1^2\\sigma_2^2(1-\\rho^2)/#=#/",
+      "text": "1.8",
+      "value": 1.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: diffuse-prior posterior variance",
+      "anchor": "posteriorvarianceis\\sigma_1^2\\sigma_2^2(1-\\rho^2)/#=#/#=",
+      "text": "0.8",
+      "value": 0.8
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: r_1",
+      "anchor": "Iftheexpertsreportr_1=",
+      "text": "5",
+      "value": 5.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: r_2",
+      "anchor": "Iftheexpertsreportr_1=#andr_2=",
+      "text": "6",
+      "value": 6.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: r_1 (in the combined estimate)",
+      "anchor": "thecombinedestimateis\\tfrac##(",
+      "text": "5",
+      "value": 5.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: r_2 (in the combined estimate)",
+      "anchor": "thecombinedestimateis\\tfrac##(#)-\\tfrac##(",
+      "text": "6",
+      "value": 6.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: combined estimate (fraction)",
+      "anchor": "thecombinedestimateis\\tfrac##(#)-\\tfrac##(#)=",
+      "text": "14/3",
+      "value": 4.666666666666667
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: combined estimate",
+      "anchor": "thecombinedestimateis\\tfrac##(#)-\\tfrac##(#)=#/#\\approx",
+      "text": "4.67",
+      "value": 4.666666666666667
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: w_1 (in the combined estimate)",
+      "anchor": "thecombinedestimateis",
+      "text": "\\tfrac43",
+      "value": 1.333333333333333
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-suprabayesian",
+      "scope": "prose",
+      "what": "GLS weights of two correlated experts: w_2 (in the combined estimate)",
+      "anchor": "thecombinedestimateis\\tfrac##(#)",
+      "text": "-\\tfrac13",
+      "value": -0.3333333333333333
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-related",
+      "scope": "prose",
+      "what": "DeGroot trust matrix: W",
+      "anchor": "W=\\beginpmatrix",
+      "text": "\\tfrac12&\\tfrac12&0\\\\[2pt]\\tfrac14&\\tfrac12&\\tfrac14\\\\[2pt]0&\\tfrac12&\\tfrac12",
+      "value": [
+        0.5,
+        0.5,
+        0.0,
+        0.25,
+        0.5,
+        0.25,
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-related",
+      "scope": "prose",
+      "what": "DeGroot trust matrix: pi_1 .. pi_3",
+      "anchor": "substituting\\boldsymbol\\pi=",
+      "text": "(\\tfrac14,\\tfrac12,\\tfrac14)",
+      "value": [
+        0.25,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: log-normal expert, log x",
+      "anchor": "right-skewedlog-normalwithunderlying\\mathcalN",
+      "text": "(1.4,0.45^2)",
+      "value": [
+        1.4,
+        0.45
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: log-normal expert, mean",
+      "anchor": "right-skewedlog-normalwithunderlying\\mathcalN(#,#^2)(mean",
+      "text": "4.49",
+      "value": 4.487294684454735
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: log-normal expert, sd",
+      "anchor": "right-skewedlog-normalwithunderlying\\mathcalN(#,#^2)(mean#,standarddeviation",
+      "text": "2.13",
+      "value": 2.125955416117342
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: reflection point",
+      "anchor": "left-skewedreflectionaboutx=",
+      "text": "5.25",
+      "value": 5.25
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: reflected expert, mean",
+      "anchor": "left-skewedreflectionaboutx=#(mean",
+      "text": "6.01",
+      "value": 6.012705315545135
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: reflected expert, sd",
+      "anchor": "left-skewedreflectionaboutx=#(mean#,standarddeviation",
+      "text": "2.13",
+      "value": 2.125955416117414
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: sharp expert",
+      "anchor": "sharpsymmetricexpert\\mathcalN",
+      "text": "(5.25,0.60^2)",
+      "value": [
+        5.25,
+        0.6
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: mu_QA",
+      "anchor": "theaverageofthemeans,\\mu_\\mathrmQA=",
+      "text": "5.25",
+      "value": 5.25
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: V_QA",
+      "anchor": "averagedquantilefunctiongivesV_\\mathrmQA=",
+      "text": "2.40",
+      "value": 2.403109416659535
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "ex:heterogeneous: (sum_i w_i sigma_i)^2",
+      "anchor": "strictlybelow\\bigl(\\sum_iw_i\\sigma_i\\bigr)^2=",
+      "text": "2.62",
+      "value": 2.61567096932855
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.1, the experts' means (plus or minus)",
+      "anchor": "normalexpertswithmeans\\pm",
+      "text": "2.2",
+      "value": 2.2
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.1, the common sd",
+      "anchor": "normalexpertswithmeans\\pm#andcommonstandarddeviation",
+      "text": "0.75",
+      "value": 0.75
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, the equal weights",
+      "anchor": "comparethethreepoolingoperatorsunderequalweights\\mathbfw=",
+      "text": "(\\tfrac14,\\tfrac14,\\tfrac14,\\tfrac14)",
+      "value": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, the quantile average",
+      "anchor": "f_\\mathrmQA=\\mathcalN",
+      "text": "(5.25,1.00^2)",
+      "value": [
+        5.25,
+        1.0
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, the logarithmic pool",
+      "anchor": "f_\\mathrmLogOP=\\mathcalN",
+      "text": "(5.30,0.97^2)",
+      "value": [
+        5.300978792822185,
+        0.9693508700664233
+      ]
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, the linear pool's mean",
+      "anchor": "TheLPsharesthemean",
+      "text": "5.25",
+      "value": 5.25
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, the linear pool's sd",
+      "anchor": "equallyweightedmixture,hasstandarddeviation",
+      "text": "1.35",
+      "value": 1.353698637068088
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, sharpness order, logarithmic pool",
+      "anchor": "Theirorderingbysharpness,f_\\mathrmLogOP(",
+      "text": "0.97",
+      "value": 0.9693508700664233
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, sharpness order, quantile average",
+      "anchor": "Theirorderingbysharpness,f_\\mathrmLogOP(#)<f_\\mathrmQA(",
+      "text": "1.00",
+      "value": 1.0
+    },
+    {
+      "file": "chapter2.tex",
+      "section": "sec:foundations-qa",
+      "scope": "prose",
+      "what": "Figure 2.2, sharpness order, linear pool",
+      "anchor": "Theirorderingbysharpness,f_\\mathrmLogOP(#)<f_\\mathrmQA(#)<f_\\mathrmLP(",
+      "text": "1.35",
+      "value": 1.353698637068088
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:bonferroni: U_A[1] .. U_A[4]",
+      "anchor": "\\widetildeU^\\mathrmFS,A&=",
+      "text": "(0.8,0.8,0.8,0.0)",
+      "value": [
+        0.8,
+        0.8,
+        0.8,
+        0.0
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:bonferroni: U_B[1] .. U_B[4]",
+      "anchor": "\\widetildeU^\\mathrmFS,B&=",
+      "text": "(0.6,0.6,0.6,0.6)",
+      "value": [
+        0.6,
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:bonferroni: arithmetic mean of A (and of B)",
+      "anchor": "whichsharethearithmeticmean",
+      "text": "0.6",
+      "value": 0.6000000000000001
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:bonferroni: Phi_11(A)",
+      "anchor": "gives\\Phi_1,1(\\widetildeU^\\mathrmFS,A)=",
+      "text": "0.566",
+      "value": 0.5656854249492381
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:bonferroni: Phi_11(B)",
+      "anchor": "against\\Phi_1,1(\\widetildeU^\\mathrmFS,B)=",
+      "text": "0.600",
+      "value": 0.6
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: A[1] .. A[5]",
+      "anchor": "Takefiveexpertswithoverlaps\\mathbfA=",
+      "text": "(0.95,0.30,0.22,0.18,0.15)",
+      "value": [
+        0.95,
+        0.3,
+        0.22,
+        0.18,
+        0.15
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: (rho, vartheta) of the five experts",
+      "anchor": "heterogeneousdispositions(\\rho_i,\\vartheta_i)equalto",
+      "text": "(0.2,-0.3),(0.5,0.1),(0.6,0.2),(0.7,0.3),(0.8,0.4)",
+      "value": [
+        0.2,
+        -0.3,
+        0.5,
+        0.1,
+        0.6,
+        0.2,
+        0.7,
+        0.3,
+        0.8,
+        0.4
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: U_FS[1] .. U_FS[5]",
+      "anchor": "areU^\\mathrmFS=",
+      "text": "(1.171,0.210,0.093,0.015,-0.060)",
+      "value": [
+        1.17125,
+        0.21,
+        0.09300000000000001,
+        0.01499999999999999,
+        -0.06000000000000003
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: normalized U_FS[1] (the clip)",
+      "anchor": "andisclippedto",
+      "text": "1",
+      "value": 1.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: kappa",
+      "anchor": "eq:parabola-normat\\kappa=",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: A[5]",
+      "anchor": "withoverlap",
+      "text": "0.15",
+      "value": 0.15
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: normalized U_FS[5] (the clip)",
+      "anchor": "clipsthatutilitytoexactly",
+      "text": "0",
+      "value": 0.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: normalized U_FS[1] .. normalized U_FS[5]",
+      "anchor": "Thenormalizedprofileis\\widetildeU^\\mathrmFS=",
+      "text": "(1.000,0.490,0.179,0.007,0.000)",
+      "value": [
+        1.0,
+        0.4899999999999999,
+        0.1786983471074381,
+        0.006944444444444432,
+        0.0
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: arithmetic mean of the normalized profile",
+      "anchor": "witharithmeticmean",
+      "text": "0.335",
+      "value": 0.3351285583103765
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-fairness",
+      "scope": "prose",
+      "what": "ex:skewed-panel: Phi_11",
+      "anchor": "bytheclosedform\\eqrefeq:bonferroni-closed,is\\Phi_1,1=",
+      "text": "0.277",
+      "value": 0.277100833660981
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: A[1] .. A[3]",
+      "anchor": "overlaptheaggregatetodegrees\\mathbfA=(A_1,A_2,A_3)=",
+      "text": "(0.9,0.6,0.3)",
+      "value": [
+        0.9,
+        0.6,
+        0.3
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: rho (every expert)",
+      "anchor": "homogeneousdisposition\\rho_i=",
+      "text": "0.4",
+      "value": 0.4
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: vartheta (every expert)",
+      "anchor": "homogeneousdisposition\\rho_i=#and\\vartheta_i=",
+      "text": "0.2",
+      "value": 0.2
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: U_FS[1] .. U_FS[3]",
+      "anchor": "thenevaluatetoU^\\mathrmFS=",
+      "text": "(0.81,0.51,0.12)",
+      "value": [
+        0.81,
+        0.5099999999999999,
+        0.1199999999999999
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: U_FS[1] / A[1]",
+      "anchor": "fallsunevenly,from",
+      "text": "0.90",
+      "value": 0.9
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: U_FS[2] / A[2]",
+      "anchor": "forthebest-representedexpertthrough",
+      "text": "0.85",
+      "value": 0.8499999999999999
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: U_FS[3] / A[3]",
+      "anchor": "forthebest-representedexpertthrough#to",
+      "text": "0.40",
+      "value": 0.3999999999999998
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: U[1] .. U[3]",
+      "anchor": "yieldstheprofileU=",
+      "text": "(0.849,0.780,0.286)",
+      "value": [
+        0.8494550119673452,
+        0.7796432632517484,
+        0.2862305178902686
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: mean U",
+      "anchor": "withmean\\barU=",
+      "text": "0.638",
+      "value": 0.6384429310364541
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: EQ_1",
+      "anchor": "\\mathrmEQ_1=",
+      "text": "-0.882",
+      "value": -0.8821845566724855
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: EQ_2",
+      "anchor": "\\mathrmEQ_2=",
+      "text": "-0.368",
+      "value": -0.3677827163809307
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: EQ_3",
+      "anchor": "\\mathrmEQ_3=",
+      "text": "-0.393",
+      "value": -0.3926384248335326
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: EQ_4",
+      "anchor": "\\mathrmEQ_4=",
+      "text": "-0.196",
+      "value": -0.1960410125938856
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: EQ_5",
+      "anchor": "\\mathrmEQ_5=",
+      "text": "-0.184",
+      "value": -0.1838913581904653
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: EQ_5 (the Hoover value again)",
+      "anchor": "theHoovervalue",
+      "text": "-0.184",
+      "value": -0.1838913581904653
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: mean U (the utilitarian mean)",
+      "anchor": "Theutilitarianmean",
+      "text": "0.638",
+      "value": 0.6384429310364541
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: minimum U",
+      "anchor": "andtheegalitarianminimum",
+      "text": "0.286",
+      "value": 0.2862305178902686
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: lambda",
+      "anchor": "sothatat\\lambda=",
+      "text": "1",
+      "value": 1.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: mean U (in W_{1,4})",
+      "anchor": "W_1,4=\\barU-I_4=",
+      "text": "0.638",
+      "value": 0.6384429310364541
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: I_4",
+      "anchor": "W_1,4=\\barU-I_4=#-",
+      "text": "0.196",
+      "value": 0.1960410125938856
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: W_{1,4}",
+      "anchor": "W_1,4=\\barU-I_4=#-#=",
+      "text": "0.442",
+      "value": 0.4424019184425685
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: U[1] .. U[3] (Atkinson paragraph)",
+      "anchor": "Continuingtheillustrativethree-expertprofileU=",
+      "text": "(0.849,0.780,0.286)",
+      "value": [
+        0.8494550119673452,
+        0.7796432632517484,
+        0.2862305178902686
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Atkinson index of the three-expert profile: varepsilon_Atk",
+      "anchor": "oftheworkedexampleabove,at\\varepsilon_\\mathrmAtk=",
+      "text": "1",
+      "value": 1.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Atkinson index of the three-expert profile: geometric mean",
+      "anchor": "equivalentlevelisthegeometricmean(#\\times#\\times#)^1/3\\approx",
+      "text": "0.574",
+      "value": 0.5744480374145056
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: mean U (Atkinson paragraph)",
+      "anchor": "againstthearithmeticmean",
+      "text": "0.638",
+      "value": 0.6384429310364541
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Atkinson index of the three-expert profile: geometric mean (in I_Atk(1))",
+      "anchor": "I_\\mathrmAtk(1)\\approx1-",
+      "text": "0.574",
+      "value": 0.5744480374145056
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "three-expert welfare profile: mean U (in I_Atk(1))",
+      "anchor": "I_\\mathrmAtk(1)\\approx1-#/",
+      "text": "0.638",
+      "value": 0.6384429310364541
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Atkinson index of the three-expert profile: I_Atk(1)",
+      "anchor": "I_\\mathrmAtk(1)\\approx1-#/#\\approx",
+      "text": "0.100",
+      "value": 0.1002358872046067
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: A[1] .. A[4]",
+      "anchor": "underoneweightingare\\mathbfA=",
+      "text": "(0.9,0.9,0.9,0.1)",
+      "value": [
+        0.9,
+        0.9,
+        0.9,
+        0.1
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: mean A",
+      "anchor": "withmeanoverlap\\barA=",
+      "text": "0.70",
+      "value": 0.7
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: I_4(A)",
+      "anchor": "andGiniinequalityI_4=",
+      "text": "0.214",
+      "value": 0.2142857142857143
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: A'[1] .. A'[4]",
+      "anchor": "levelingdownto\\mathbfA'=",
+      "text": "(0.4,0.4,0.4,0.4)",
+      "value": [
+        0.4,
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: I_4(A')",
+      "anchor": "attainsperfectequity,I_4=",
+      "text": "0",
+      "value": 0.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: -I_4(A)",
+      "anchor": "bareequityobjective-I_4from",
+      "text": "-0.214",
+      "value": -0.2142857142857143
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: I_4(A') (the bare equity objective at A')",
+      "anchor": "bareequityobjective-I_4from#to",
+      "text": "0",
+      "value": 0.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: mean A (again)",
+      "anchor": "lowersthemeanoverlapfrom",
+      "text": "0.70",
+      "value": 0.7
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: mean A'",
+      "anchor": "lowersthemeanoverlapfrom#to",
+      "text": "0.40",
+      "value": 0.4
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: drop in mean overlap",
+      "anchor": "forevery\\lambda<",
+      "text": "0.30",
+      "value": 0.3
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: I_4(A) (in the threshold)",
+      "anchor": "forevery\\lambda<#/",
+      "text": "0.214",
+      "value": 0.2142857142857143
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: threshold lambda",
+      "anchor": "forevery\\lambda<#/#\\approx",
+      "text": "1.40",
+      "value": 1.4
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: drop in mean overlap (again)",
+      "anchor": "Belowthisthresholdthedropof",
+      "text": "0.30",
+      "value": 0.3
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: I_4(A) (in the gain)",
+      "anchor": "outweighsthegainof",
+      "text": "0.214",
+      "value": 0.2142857142857143
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "leveling-down four-expert panel: threshold lambda (again)",
+      "anchor": "forgomorethan",
+      "text": "1.40",
+      "value": 1.4
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Atkinson index of the three-expert profile: the product under the geometric mean",
+      "anchor": "equivalentlevelisthegeometricmean(",
+      "text": "0.849\\times0.780\\times0.286",
+      "value": [
+        0.8494550119673452,
+        0.7796432632517484,
+        0.2862305178902686
+      ]
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: second-lowest utility",
+      "anchor": "Sixexpertsholdutilitiesbetween",
+      "text": "0.812",
+      "value": 0.8120301812024013
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: largest utility",
+      "anchor": "Sixexpertsholdutilitiesbetween#and",
+      "text": "0.927",
+      "value": 0.9270664363826819
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: the dissenting expert",
+      "anchor": "andthedissentingexpert",
+      "text": "5",
+      "value": 5.0
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: the dissenter's utility",
+      "anchor": "andthedissentingexpert#only",
+      "text": "0.220",
+      "value": 0.2202719863172767
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: Gini coefficient",
+      "anchor": "OnthisprofiletheGinicoefficientis",
+      "text": "0.121",
+      "value": 0.1213551644611794
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: Hoover index",
+      "anchor": "OnthisprofiletheGinicoefficientis#andtheHooverindex",
+      "text": "0.104",
+      "value": 0.1035809061410354
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-welfare",
+      "scope": "prose",
+      "what": "Figure 3.1 profile: mean utility",
+      "anchor": "belowthepanelmeanof",
+      "text": "0.801",
+      "value": 0.801182324167245
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-elicitation",
+      "scope": "prose",
+      "what": "ultimatum-game identification: s_hat (thirty percent)",
+      "anchor": "ofthepie,\\hats=",
+      "text": "0.3",
+      "value": 0.3
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-elicitation",
+      "scope": "prose",
+      "what": "ultimatum-game identification: s_hat (thirty percent) (in alpha = s/(1-2s))",
+      "anchor": "ofthepie,\\hats=#,reveals\\alpha_i=",
+      "text": "0.3",
+      "value": 0.3
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-elicitation",
+      "scope": "prose",
+      "what": "ultimatum-game identification: 1 - 2 s_hat (thirty percent)",
+      "anchor": "ofthepie,\\hats=#,reveals\\alpha_i=#/",
+      "text": "0.4",
+      "value": 0.4
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-elicitation",
+      "scope": "prose",
+      "what": "ultimatum-game identification: alpha (thirty percent)",
+      "anchor": "ofthepie,\\hats=#,reveals\\alpha_i=#/#=",
+      "text": "0.75",
+      "value": 0.75
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-elicitation",
+      "scope": "prose",
+      "what": "ultimatum-game identification: s_hat (a quarter)",
+      "anchor": "indifferentataquarter,\\hats=",
+      "text": "0.25",
+      "value": 0.25
+    },
+    {
+      "file": "chapter3.tex",
+      "section": "sec:conscience-elicitation",
+      "scope": "prose",
+      "what": "ultimatum-game identification: alpha (a quarter)",
+      "anchor": "indifferentataquarter,\\hats=#,reveals\\alpha_i=",
+      "text": "0.5",
+      "value": 0.5
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: N",
+      "anchor": "TakeapanelofN=",
+      "text": "90",
+      "value": 90.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: K",
+      "anchor": "TakeapanelofN=#expertsandK=",
+      "text": "3",
+      "value": 3.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: N (the sum of the subgroup sizes)",
+      "anchor": "summingto",
+      "text": "90",
+      "value": 90.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: balanced size n_1 .. balanced size n_3",
+      "anchor": "Abalancedpartition",
+      "text": "(30,30,30)",
+      "value": [
+        30.0,
+        30.0,
+        30.0
+      ]
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: K (in the balanced count)",
+      "anchor": "Abalancedpartition(#,#,#)incurs",
+      "text": "3",
+      "value": 3.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: balanced size n_1 (in the balanced count)",
+      "anchor": "Abalancedpartition(#,#,#)incurs#\\times",
+      "text": "30",
+      "value": 30.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: balanced n_k - 1",
+      "anchor": "Abalancedpartition(#,#,#)incurs#\\times#\\times",
+      "text": "29",
+      "value": 29.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: balanced intra-group count",
+      "anchor": "Abalancedpartition(#,#,#)incurs#\\times#\\times#=",
+      "text": "2,610",
+      "value": 2610.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: N (in the flat count)",
+      "anchor": "againstthe",
+      "text": "90",
+      "value": 90.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: N - 1",
+      "anchor": "againstthe#\\times",
+      "text": "89",
+      "value": 89.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: flat count",
+      "anchor": "againstthe#\\times#=",
+      "text": "8,010",
+      "value": 8010.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed size n_1 .. skewed size n_3",
+      "anchor": "Askewedpartition",
+      "text": "(80,5,5)",
+      "value": [
+        80.0,
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed size n_1 (in the skewed count)",
+      "anchor": "dominatesthepanel,incurs",
+      "text": "80",
+      "value": 80.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed n_1 - 1",
+      "anchor": "dominatesthepanel,incurs#\\times",
+      "text": "79",
+      "value": 79.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed subgroups of size n_2",
+      "anchor": "dominatesthepanel,incurs#\\times#+",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed size n_2 (in the skewed count)",
+      "anchor": "dominatesthepanel,incurs#\\times#+#\\times",
+      "text": "5",
+      "value": 5.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed n_2 - 1",
+      "anchor": "dominatesthepanel,incurs#\\times#+#\\times#\\times",
+      "text": "4",
+      "value": 4.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "ex:unbalanced-clustering: skewed intra-group count",
+      "anchor": "dominatesthepanel,incurs#\\times#+#\\times#\\times#=",
+      "text": "6,360",
+      "value": 6360.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: m",
+      "anchor": "Attheconventionalm=",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: exponent 2/(m - 1)",
+      "anchor": "theexponent2/(m-1)equals",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: distance to the nearer centroid",
+      "anchor": "Anexpertatdistance",
+      "text": "1",
+      "value": 1.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: distance to the farther centroid",
+      "anchor": "Anexpertatdistance#fromonecentroidanddistance",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: ratio d_near / d_far",
+      "anchor": "thenreceivesmembership1/\\bigl(1+(",
+      "text": "1/2",
+      "value": 0.5
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: exponent 2/(m - 1) (in the membership)",
+      "anchor": "thenreceivesmembership1/\\bigl(1+(#/#)^",
+      "text": "2",
+      "value": 2.0
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: membership in the nearer subgroup",
+      "anchor": "thenreceivesmembership1/\\bigl(1+(#/#)^#\\bigr)=",
+      "text": "0.8",
+      "value": 0.8
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: membership in the farther subgroup",
+      "anchor": "inthenearersubgroupand",
+      "text": "0.2",
+      "value": 0.2
+    },
+    {
+      "file": "chapter4.tex",
+      "section": "sec:scalability-hierarchical",
+      "scope": "prose",
+      "what": "fuzzy C-means memberships: membership of an equidistant expert",
+      "anchor": "equidistantfrombothreceives",
+      "text": "0.5",
+      "value": 0.5
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "equicorrelated ceiling: r",
+      "anchor": "equicorrelatedpoolatr=",
+      "text": "0.7",
+      "value": 0.7
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "equicorrelated ceiling: ceiling 1/r",
+      "anchor": "canneverexceedabout",
+      "text": "1.4",
+      "value": 1.428571428571429
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: w_i",
+      "anchor": "weightedequally,w_i=",
+      "text": "1/10",
+      "value": 0.1
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: N_eff at R = I",
+      "anchor": "R=IwouldgiveN_\\mathrmeff=",
+      "text": "10",
+      "value": 9.999999999999998
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: r",
+      "anchor": "soatr=",
+      "text": "0.7",
+      "value": 0.7
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: N (in the effective number)",
+      "anchor": "thetenmodelssupplyonlyN_\\mathrmeff=",
+      "text": "10",
+      "value": 10.0
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: 1 + (N - 1) r",
+      "anchor": "thetenmodelssupplyonlyN_\\mathrmeff=#/",
+      "text": "7.3",
+      "value": 7.3
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: N_eff, equicorrelated",
+      "anchor": "thetenmodelssupplyonlyN_\\mathrmeff=#/#\\approx",
+      "text": "1.4",
+      "value": 1.36986301369863
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: r_w",
+      "anchor": "correlatedatr_\\mathrmw=",
+      "text": "0.8",
+      "value": 0.8
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: r_b",
+      "anchor": "withinagroupandr_\\mathrmb=",
+      "text": "0.2",
+      "value": 0.2
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: N_eff, three lineages, equal weights",
+      "anchor": "effectivenumberisthenN_\\mathrmeff\\approx",
+      "text": "2.2",
+      "value": 2.232142857142857
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: group share 1, equal weights .. group share 3, equal weights",
+      "anchor": "drawsthegroupweightsharesfrom",
+      "text": "(0.50,0.30,0.20)",
+      "value": [
+        0.5,
+        0.3,
+        0.2
+      ]
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: group share 1, penalty minimum .. group share 3, penalty minimum",
+      "anchor": "drawsthegroupweightsharesfrom(#,#,#)toward",
+      "text": "(\\tfrac13,\\tfrac13,\\tfrac13)",
+      "value": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: N_eff, equal shares, equal weights within",
+      "anchor": "withequalweightswithineachgroup,toN_\\mathrmeff\\approx",
+      "text": "2.4",
+      "value": 2.364273204903678
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: r",
+      "anchor": "within-lineageerrorcorrelationr_ij\\approx",
+      "text": "0.85",
+      "value": 0.85
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: n",
+      "anchor": "thosefivevariantscountasonly",
+      "text": "5",
+      "value": 5.0
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: n - 1",
+      "anchor": "thosefivevariantscountasonly#/[1+",
+      "text": "4",
+      "value": 4.0
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: r (in the count)",
+      "anchor": "thosefivevariantscountasonly#/[#+#(",
+      "text": "0.85",
+      "value": 0.85
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: N_eff of the lineage",
+      "anchor": "thosefivevariantscountasonly#/[#+#(#)]\\approx",
+      "text": "1.1",
+      "value": 1.136363636363636
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: panel size (in words)",
+      "anchor": "Consider",
+      "text": "ten",
+      "value": 10,
+      "follow": "languagemodels"
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: panel size, again (in words)",
+      "anchor": "farbelowthenominal",
+      "text": "ten",
+      "value": 10,
+      "follow": "andbeloweventhe"
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:neff: group sizes (in words)",
+      "anchor": "provenancegroupsofsizes",
+      "text": "five,three,andtwo",
+      "value": [
+        5,
+        3,
+        2
+      ],
+      "follow": ",correlatedat"
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel human error correlation, smallest",
+      "anchor": "ex:hmpanelcorrelateat",
+      "text": "0.91",
+      "value": 0.9070261738726431
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel human error correlation, largest",
+      "anchor": "ex:hmpanelcorrelateat#to",
+      "text": "0.93",
+      "value": 0.9285902729109184
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel machine error correlation, smallest",
+      "anchor": "amongitshumansandat",
+      "text": "0.87",
+      "value": 0.8732916221232057
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel machine error correlation, largest",
+      "anchor": "amongitshumansandat#to",
+      "text": "0.98",
+      "value": 0.9781219555305847
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel humans, effective number",
+      "anchor": "itstwosubpanelscountasonly",
+      "text": "1.07",
+      "value": 1.068709660405873
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel machines, effective number",
+      "anchor": "itstwosubpanelscountasonly#and",
+      "text": "1.08",
+      "value": 1.081094297304205
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: squared correlation with the outcome, smallest",
+      "anchor": "withtheoutcomelyingbetween",
+      "text": "0.21",
+      "value": 0.2065103505631196
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: squared correlation with the outcome, largest",
+      "anchor": "withtheoutcomelyingbetween#and",
+      "text": "0.37",
+      "value": 0.3731243960616894
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: lineage-human correlation, smallest",
+      "anchor": "tocorrelatewithitshumansatonly",
+      "text": "0.02",
+      "value": 0.023
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: lineage-human correlation, largest",
+      "anchor": "tocorrelatewithitshumansatonly#to",
+      "text": "0.10",
+      "value": 0.095
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel human-machine error correlation, smallest",
+      "anchor": "tocorrelatewithitshumansatonly#to#,belowthe",
+      "text": "0.49",
+      "value": 0.4904554480673309
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel human-machine error correlation, largest",
+      "anchor": "tocorrelatewithitshumansatonly#to#,belowthe#to",
+      "text": "0.59",
+      "value": 0.5862706411444243
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel human-machine forecast correlation, smallest",
+      "anchor": "twosubpanelscorrelatingatonly",
+      "text": "-0.10",
+      "value": -0.09842716839536039
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel human-machine forecast correlation, largest",
+      "anchor": "twosubpanelscorrelatingatonly#to",
+      "text": "0.01",
+      "value": 0.008439575244451518
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel effective number, humans",
+      "anchor": "raisestheeffectivenumberofexpertsfrom",
+      "text": "1.07",
+      "value": 1.068709660405873
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: ex:hmpanel effective number, panel",
+      "anchor": "raisestheeffectivenumberofexpertsfrom#to",
+      "text": "1.36",
+      "value": 1.364208292156357
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: stipulated humans, effective number",
+      "anchor": "lowerstheeffectivenumberfrom",
+      "text": "3.36",
+      "value": 3.358409457281031
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: stipulated humans with the lineage, effective number",
+      "anchor": "lowerstheeffectivenumberfrom#to",
+      "text": "3.11",
+      "value": 3.109452736318407
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: Figure 5.4 human block, smallest",
+      "anchor": "pairwisecorrelationslyingbetween",
+      "text": "0.05",
+      "value": 0.051
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: Figure 5.4 human block, largest",
+      "anchor": "pairwisecorrelationslyingbetween#and",
+      "text": "0.19",
+      "value": 0.19
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: Figure 5.4 cross block, smallest",
+      "anchor": "correlationswiththevariantsbetween",
+      "text": "0.02",
+      "value": 0.023
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: Figure 5.4 cross block, largest",
+      "anchor": "correlationswiththevariantsbetween#and",
+      "text": "0.10",
+      "value": 0.095
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: Figure 5.4 lineage block mean",
+      "anchor": "within-lineagecorrelationof",
+      "text": "0.85",
+      "value": 0.85
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: lineage count, detection clause",
+      "anchor": "inwhichthelineagecountsforonlyabout",
+      "text": "1.1",
+      "value": 1.136363636363636
+    },
+    {
+      "file": "chapter5.tex",
+      "section": "sec:collab-dependence",
+      "scope": "prose",
+      "what": "ex:corr-lineage: Figure 5.4 clique, effective number",
+      "anchor": "thecliquesuppliesonlyabout",
+      "text": "1.1",
+      "value": 1.136363636363636
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-elicit",
+      "scope": "prose",
+      "what": "normal fit of the q4 profile",
+      "anchor": "bandmidpointsreturns\\mathcalN",
+      "text": "(4.98,1.31^2)",
+      "value": [
+        4.98,
+        1.307516730294492
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-hierarchy",
+      "scope": "prose",
+      "what": "inter-group credibility weights Omega",
+      "anchor": "credibilityweights\\boldsymbol\\Omega=",
+      "text": "(0.17,0.30,0.53)",
+      "value": [
+        0.1687127946053721,
+        0.3046151229880996,
+        0.5266720824065282
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-hierarchy",
+      "scope": "prose",
+      "what": "q4 collective",
+      "anchor": "returnsthecollective\\mathcalN",
+      "text": "(5.00,1.07^2)",
+      "value": [
+        4.996114650274933,
+        1.067629107886406
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "full assessment, global maturity",
+      "anchor": "theglobalmaturityis\\mathcalN",
+      "text": "(5.26,1.12^2)",
+      "value": [
+        5.256290176876259,
+        1.12289057662068
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "full assessment, global maturity under the published equal dimension weights",
+      "anchor": "equaldimensionweightsof\\citetchen2023bimdcitwouldbe\\mathcalN",
+      "text": "(5.46,1.12^2)",
+      "value": [
+        5.46393641691333,
+        1.12379457064849
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta = 0 aggregate",
+      "anchor": "givingtheaggregate\\mathcalN",
+      "text": "(6.80,1.10^2)",
+      "value": [
+        6.800000000000001,
+        1.1
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta = 0 overlap of the dissenter (minimum overlap)",
+      "anchor": [
+        "overlapwiththeaggregateisonly",
+        "thatexpert'soverlapwiththeaggregateis"
+      ],
+      "text": "0.379",
+      "value": 0.3794304596033998
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta = 0.5 weight vector",
+      "anchor": "thesolutionis\\mathbfw=",
+      "text": "(0,0,0,0,0.237,0.763,0)",
+      "value": [
+        6.455120784819196e-22,
+        3.255717226600853e-17,
+        0.0,
+        4.956551759477193e-18,
+        0.2368421054282722,
+        0.7631578945717278,
+        5.67859980644964e-18
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta = 0.5 aggregate",
+      "anchor": "theremainderonexpert#,andtheaggregatemovesto\\mathcalN",
+      "text": "(6.15,1.15^2)",
+      "value": [
+        6.149999999686282,
+        1.147368421085655
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta = 0.6 weight on the dissenter",
+      "anchor": "thedissenter'sweightrisesto",
+      "text": "0.303",
+      "value": 0.3033108163160476
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta = 0.6 aggregate",
+      "anchor": "andtheaggregatefallsto\\mathcalN",
+      "text": "(6.02,1.16^2)",
+      "value": [
+        6.02370944899951,
+        1.16066216326321
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta threshold, last grid point without dissenter weight",
+      "anchor": "risespastathresholdbetween",
+      "text": "0.4",
+      "value": 0.4
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta threshold, first grid point with dissenter weight",
+      "anchor": "risespastathresholdbetween#and",
+      "text": "0.5",
+      "value": 0.5
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta threshold, last grid point without dissenter weight",
+      "anchor": "onlypastathresholdbetween",
+      "text": "0.4",
+      "value": 0.4
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bim-results",
+      "scope": "prose",
+      "what": "fairness panel, delta threshold, first grid point with dissenter weight",
+      "anchor": "onlypastathresholdbetween#and",
+      "text": "0.5",
+      "value": 0.5
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "fairness panel, delta threshold, last grid point without dissenter weight",
+      "anchor": "dissenteronlypastathresholdbetween",
+      "text": "0.4",
+      "value": 0.4
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "fairness panel, delta threshold, first grid point with dissenter weight",
+      "anchor": "dissenteronlypastathresholdbetween#and",
+      "text": "0.5",
+      "value": 0.5
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B14",
+      "anchor": "(B_14)ranksfirstat\\bar\\mu=",
+      "text": "4.12",
+      "value": 4.117090698363376
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B6",
+      "anchor": "(B_6)at",
+      "text": "3.99",
+      "value": 3.994068522155216
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B1",
+      "anchor": "(B_1)at",
+      "text": "3.88",
+      "value": 3.880388560261891
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B10",
+      "anchor": "(B_10)at",
+      "text": "3.78",
+      "value": 3.781498652190321
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B11",
+      "anchor": "(B_11,",
+      "text": "2.78",
+      "value": 2.781677466026663
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B13",
+      "anchor": "(B_13,",
+      "text": "2.50",
+      "value": 2.503086216422037
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:dt-results",
+      "scope": "prose",
+      "what": "average collective mean of B9",
+      "anchor": "(B_9,",
+      "text": "2.29",
+      "value": 2.290816754346168
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "largest spread of a barrier mean across the five indices",
+      "anchor": [
+        "barrierbyatmost",
+        "barrierbyupto"
+      ],
+      "text": "0.21",
+      "value": 0.2117870908779822
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "q1 mean of G1",
+      "anchor": "groupopinionshavemeans",
+      "text": "2.51",
+      "value": 2.511651411211002
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "q1 mean of G2",
+      "anchor": "groupopinionshavemeans#,",
+      "text": "2.65",
+      "value": 2.650807470002867
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "q1 mean of G3",
+      "anchor": "groupopinionshavemeans#,#,and",
+      "text": "3.01",
+      "value": 3.007062933874728
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "q1 collective mean",
+      "anchor": "collectivedistributionwithmean",
+      "text": "2.80",
+      "value": 2.799307700467148
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "highest dimension mean",
+      "anchor": "standinghighest(",
+      "text": "2.90",
+      "value": 2.903141580707087
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "lowest dimension mean",
+      "anchor": "lowest(",
+      "text": "2.49",
+      "value": 2.493049848479878
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "global maturity",
+      "anchor": "equal-weightoperatingpoint,is",
+      "text": "2.73",
+      "value": 2.733405536515033
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "collective fairness",
+      "anchor": "withacollectivefairnessof",
+      "text": "0.980",
+      "value": 0.9796163882005704
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "weight Gini",
+      "anchor": ",aweightGiniof",
+      "text": "0.11",
+      "value": 0.1086965402611418
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "aggregate variance",
+      "anchor": "andanaggregatevarianceof",
+      "text": "0.357",
+      "value": 0.3572806757709159
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "inter-group weights Omega",
+      "anchor": "clustercentroidsgives\\boldsymbol\\Omega=",
+      "text": "(0.28,0.19,0.53)",
+      "value": [
+        0.281702640895305,
+        0.1914258335916295,
+        0.5268715255130654
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "smallest member sd",
+      "anchor": "memberstandarddeviationsbetween",
+      "text": "0.43",
+      "value": 0.4258909715816178
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "largest member sd",
+      "anchor": "memberstandarddeviationsbetween#and",
+      "text": "0.78",
+      "value": 0.7787245176562813
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "mean member sd",
+      "anchor": "memberstandarddeviationsbetween#and#,withmean",
+      "text": "0.59",
+      "value": 0.5853096211777893
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "smallest aggregate variance over the sweep",
+      "anchor": "globaldistributionliesbetween",
+      "text": "0.31",
+      "value": 0.310318510572209
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "largest aggregate variance over the sweep",
+      "anchor": "globaldistributionliesbetween#and",
+      "text": "0.36",
+      "value": 0.3572806757709159
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "seed of the second set of starts (draw order)",
+      "anchor": "describedbelow,whichtheseed",
+      "text": "202604",
+      "value": 202604
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "seed of the second set of starts",
+      "anchor": "separategeneratorseededwith",
+      "text": "202604",
+      "value": 202604
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "largest gain of the further starts over the best original start (upper bound)",
+      "anchor": "thisoneamongthem,byatmost",
+      "text": "1.2\\times10^-5",
+      "value": 1.2e-05
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "local polish, round tolerance",
+      "anchor": "untilaroundgainsnomorethan",
+      "text": "10^-12",
+      "value": 1e-12
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "local polish, largest gain (upper bound)",
+      "anchor": "raisesnoretainedvaluebymorethan",
+      "text": "4.1\\times10^-5",
+      "value": 4.1e-05
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-data",
+      "scope": "prose",
+      "what": "local polish, largest member-weight move (upper bound)",
+      "anchor": "movesnomemberweightbymorethan",
+      "text": "1.8\\times10^-3",
+      "value": 0.0018
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:bdt-results",
+      "scope": "prose",
+      "what": "global maturity change over the fairness-weight sweep (hundredths, in words)",
+      "anchor": "Theglobalmaturitymovesby",
+      "text": "four",
+      "value": 0.040395215392493355,
+      "follow": "hundredthsofalevel"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "global maturity change over the fairness-weight sweep (hundredths, in words)",
+      "anchor": "theglobalmaturitymovesby",
+      "text": "four",
+      "value": 0.040395215392493355,
+      "follow": "hundredthsofalevel"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested station, consensus-only mean",
+      "anchor": "NorthgateInterchangeaggregatesto",
+      "text": "6.54",
+      "value": 6.53717725343716
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested station, equity-aware mean",
+      "anchor": "thecollectivemeanfallsto",
+      "text": "5.54",
+      "value": 5.544631627346865
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "swap neighbor, consensus-only mean",
+      "anchor": "UniversityPark(S_5)at",
+      "text": "6.02",
+      "value": 6.017891992499955
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "swap neighbor, equity-aware mean",
+      "anchor": "UniversityPark's",
+      "text": "5.92",
+      "value": 5.924157029271251
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested station, consensus-only advocate share",
+      "anchor": [
+        "theadvocatesreceivingaweightshareof",
+        "theadvocatesreceivingaselectedweightshareof"
+      ],
+      "text": "0.03",
+      "value": 0.02796462736587024
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested station, equity-aware advocate share",
+      "anchor": [
+        "theirsharerisingto",
+        "theirselectedsharerisingto"
+      ],
+      "text": "0.46",
+      "value": 0.4628987760684027
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "average weight Gini, consensus-only",
+      "anchor": "selectedweightvectoris",
+      "text": "0.10",
+      "value": 0.09987607752694624
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "average weight Gini, equity-aware",
+      "anchor": "selectedweightvectoris#undertheconsensusregimeand",
+      "text": "0.12",
+      "value": 0.1210868196180688
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "largest uncontested mean gap",
+      "anchor": "collectivemeansdifferingbyatmost",
+      "text": "0.33",
+      "value": 0.3316287344637212
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "swap margin, neighbor equity-aware mean",
+      "anchor": "differenceonwhichtheswapdepends,",
+      "text": "5.92",
+      "value": 5.924157029271251
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "swap margin, contested equity-aware mean",
+      "anchor": "differenceonwhichtheswapdepends,#against",
+      "text": "5.54",
+      "value": 5.544631627346865
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested mean utility, consensus-only",
+      "anchor": [
+        "meanutilityrisesatthecontestedstationfrom",
+        "contestedstation,wherethemeanutilityrisesfrom"
+      ],
+      "text": "0.71",
+      "value": 0.7130906217860978
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested mean utility, equity-aware",
+      "anchor": [
+        "meanutilityrisesatthecontestedstationfrom#to",
+        "contestedstation,wherethemeanutilityrisesfrom#to"
+      ],
+      "text": "0.87",
+      "value": 0.8697187503232687
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested utility Gini, consensus-only",
+      "anchor": "theGinioftheutilitiesfallsfrom",
+      "text": "0.20",
+      "value": 0.2035818140229257
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested utility Gini, equity-aware",
+      "anchor": "theGinioftheutilitiesfallsfrom#to",
+      "text": "0.03",
+      "value": 0.02801089972335128
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "swap margin",
+      "anchor": "differenceonwhichtheswapdepends,#against#,is",
+      "text": "0.38",
+      "value": 0.3795254019243863
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seed sd of the swap margin",
+      "anchor": "morethanthreetimesitsstandarddeviationof",
+      "text": "0.11",
+      "value": 0.1092354151153058
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seeded panels behind the sd",
+      "anchor": "morethanthreetimesitsstandarddeviationof#acrossthe",
+      "text": "forty",
+      "value": 40,
+      "follow": "re-seededpanels"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seeded panels",
+      "anchor": "Regeneratingthepanelunder",
+      "text": "forty",
+      "value": 40,
+      "follow": "furtherseeds"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "first re-seed",
+      "anchor": "furtherseeds,",
+      "text": "202604",
+      "value": 202604
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "last re-seed",
+      "anchor": "furtherseeds,#to",
+      "text": "202643",
+      "value": 202643
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seeded panels preserving the swap",
+      "anchor": "preservesthedirectionoftheswapinall",
+      "text": "forty",
+      "value": 40,
+      "follow": ",andin"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seeded panels with no other reordering",
+      "anchor": "preservesthedirectionoftheswapinallforty,andin",
+      "text": "thirty-three",
+      "value": 33,
+      "follow": "ofthemnootherpair"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seeded panels where the contested station moves two places",
+      "anchor": "ratherthanoneintheremaining",
+      "text": "seven",
+      "value": 7,
+      "follow": "whiletheotherstations"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "Fehr-Schmidt grid of rho",
+      "anchor": "Fehr--Schmidtparametersover\\rho_i\\in\\",
+      "text": "0.2,0.3,0.4,0.5,0.6",
+      "value": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "Fehr-Schmidt grid of vartheta",
+      "anchor": "\\and\\vartheta_i\\in\\",
+      "text": "0,0.1,0.2,0.3,0.4",
+      "value": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ]
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "Fehr-Schmidt settings",
+      "anchor": "\\vartheta_i\\le\\rho_i,",
+      "text": "twenty-two",
+      "value": 22,
+      "follow": "combinations"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested advocate share over the Fehr-Schmidt grid, smallest",
+      "anchor": "contestedstationonlybetween",
+      "text": "0.45",
+      "value": 0.4547141569334406
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested advocate share over the Fehr-Schmidt grid, largest",
+      "anchor": "contestedstationonlybetween#and",
+      "text": "0.46",
+      "value": 0.4638183740141253
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "uncontested stations (Fehr-Schmidt grid)",
+      "anchor": "andtheorderofthe",
+      "text": "nine",
+      "value": 9,
+      "follow": "uncontestedstations"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "solves with a near-tied local maximum",
+      "anchor": "nearlytiedlocalmaximaatsomeuncontestedstations.At",
+      "text": "four",
+      "value": 4,
+      "follow": "ofthe"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "solves",
+      "anchor": "nearlytiedlocalmaximaatsomeuncontestedstations.Atfourofthe",
+      "text": "twenty",
+      "value": 20,
+      "follow": "solves"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "near-tie tolerance (relative)",
+      "anchor": "furtherlocalmaximumcomeswithin",
+      "text": "10^-4",
+      "value": 0.0001
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "near-tied local maxima at the closest solve",
+      "anchor": "theonesolvewith",
+      "text": "two",
+      "value": 2,
+      "follow": "ofthem"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, lower local maximum",
+      "anchor": "objectivehaslocalmaximaat",
+      "text": "7.74",
+      "value": 7.739143708343011
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, upper local maximum",
+      "anchor": "objectivehaslocalmaximaat#and",
+      "text": "7.77",
+      "value": 7.772135380037826
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, reported optimum",
+      "anchor": "fallshortoftheoptimumat",
+      "text": "7.88",
+      "value": 7.876428642499238
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, bound on the relative gaps",
+      "anchor": "fallshortoftheoptimumat#bylessthan",
+      "text": "2\\times10^-5",
+      "value": 2e-05
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, runner-up",
+      "anchor": "nearest-to-uniformrepresentativeat",
+      "text": "7.74",
+      "value": 7.739143708343011
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, runner-up advocate share",
+      "anchor": "wouldgivetheadvocatesashareof",
+      "text": "0.35",
+      "value": 0.3534683299996316
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "closest near-tie, runner-up weight Gini",
+      "anchor": "ataweightGiniof",
+      "text": "0.19",
+      "value": 0.1870996276114664
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "uncontested-difference threshold",
+      "anchor": "otherthanWestfieldDepot'sbelow",
+      "text": "0.2",
+      "value": 0.2
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "average weight Gini over the near-tie combinations, consensus-only, smallest",
+      "anchor": "averageweightGinionlybetween",
+      "text": "0.09",
+      "value": 0.0939
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "average weight Gini over the near-tie combinations, consensus-only, largest",
+      "anchor": "averageweightGinionlybetween#and",
+      "text": "0.10",
+      "value": 0.1001
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "average weight Gini over the near-tie combinations, equity-aware, smallest",
+      "anchor": "undertheconsensusregimeandbetween",
+      "text": "0.12",
+      "value": 0.1191
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "average weight Gini over the near-tie combinations, equity-aware, largest",
+      "anchor": "undertheconsensusregimeandbetween#and",
+      "text": "0.14",
+      "value": 0.1377
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "uncontested stations (utility leveling-down)",
+      "anchor": "theGinioftheutilitiesfallsfrom#to#.Attheother",
+      "text": "nine",
+      "value": 9,
+      "follow": "stations"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "bound on the uncontested change of the mean utility",
+      "anchor": "themeanutilitychangesbylessthan",
+      "text": "0.01",
+      "value": 0.009790690434734461
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "bound on the uncontested change of the utility Gini",
+      "anchor": "theGinioftheutilitiesbyatmost",
+      "text": "0.013",
+      "value": 0.01288676143868449
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "stations leveling down over the near-tie combinations, fewest",
+      "anchor": "acrosstheircombinations",
+      "text": "seven",
+      "value": 7,
+      "follow": "to"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "stations leveling down over the near-tie combinations, most",
+      "anchor": "acrosstheircombinationssevento",
+      "text": "nine",
+      "value": 9,
+      "follow": "stationsleveldown"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "bound on the uncontested mean overlap given up",
+      "anchor": "meanoverlapgivenupisatmost",
+      "text": "0.05",
+      "value": 0.04796449296592087
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested overlap Gini, consensus-only",
+      "anchor": "AtthecontestedstationtheGinioftheoverlapsfallsfrom",
+      "text": "0.18",
+      "value": 0.1781448777240851
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested overlap Gini, equity-aware",
+      "anchor": "AtthecontestedstationtheGinioftheoverlapsfallsfrom#to",
+      "text": "0.10",
+      "value": 0.1036866706774666
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested mean overlap, consensus-only",
+      "anchor": "thepanel'smeanoverlapfrom",
+      "text": "0.75",
+      "value": 0.7504086961681495
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested mean overlap, equity-aware",
+      "anchor": "thepanel'smeanoverlapfrom#to",
+      "text": "0.62",
+      "value": 0.6243352116480274
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested smallest overlap, consensus-only",
+      "anchor": "thesmallestoverlaprisesfrom",
+      "text": "0.23",
+      "value": 0.2297724613712611
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "contested smallest overlap, equity-aware",
+      "anchor": "thesmallestoverlaprisesfrom#to",
+      "text": "0.48",
+      "value": 0.4810141425919578
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "size of the advocates' constituency",
+      "anchor": "acriterionthatpreventsa",
+      "text": "six",
+      "value": 6,
+      "follow": "-memberconstituency"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "uncontested stations (managerial)",
+      "anchor": "theunchangedorderoftheother",
+      "text": "nine",
+      "value": 9,
+      "follow": "stations"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "early-warning threshold",
+      "anchor": "Onthisdesignathresholdof",
+      "text": "0.5",
+      "value": 0.5
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "re-seeded panels the threshold separates",
+      "anchor": "inthemainpanelandinall",
+      "text": "forty",
+      "value": 40,
+      "follow": "re-seededones"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "smallest contested difference",
+      "anchor": "thesmallestcontesteddifferenceacrossthembeing",
+      "text": "0.53",
+      "value": 0.5343983996696187
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "largest uncontested difference",
+      "anchor": "thelargestuncontestedone",
+      "text": "0.33",
+      "value": 0.3316287344637212
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-robust",
+      "scope": "prose",
+      "what": "stations (closing box)",
+      "anchor": "singlesyntheticaccessibilityindexover",
+      "text": "ten",
+      "value": 10,
+      "follow": "fictitiousstations"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-data",
+      "scope": "prose",
+      "what": "seed",
+      "anchor": "Thepanelisgeneratedundertheseed",
+      "text": "202603",
+      "value": 202603
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-data",
+      "scope": "prose",
+      "what": "leniency sd",
+      "anchor": "shiftedbyapersonalleniencywithstandarddeviation",
+      "text": "0.15",
+      "value": 0.15
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-data",
+      "scope": "prose",
+      "what": "noise sd",
+      "anchor": "andbynoisewithstandarddeviation",
+      "text": "0.25",
+      "value": 0.25
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-data",
+      "scope": "prose",
+      "what": "common dispersion",
+      "anchor": "isassignedthecommondispersion",
+      "text": "1.0",
+      "value": 1.0
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-data",
+      "scope": "prose",
+      "what": "stakeholders",
+      "anchor": "Thesolutionproceduretakesthe",
+      "text": "twenty-four",
+      "value": 24,
+      "follow": "generatednormaldistributions"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "threshold of the other uncontested differences",
+      "anchor": "atWestfieldDepot,andbylessthan",
+      "text": "0.2",
+      "value": 0.2
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "uncontested stations below the threshold",
+      "anchor": "atWestfieldDepot,andbylessthan#ateachoftheother",
+      "text": "eight",
+      "value": 8,
+      "follow": ",andnouncontestedpair"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "lowest judgment below the panel mean at the largest uncontested difference",
+      "anchor": "bothadvocates',lie",
+      "text": "0.98",
+      "value": 0.9752825050505383
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "second-lowest judgment below the panel mean there",
+      "anchor": "bothadvocates',lie#and",
+      "text": "0.73",
+      "value": 0.7340384137891132
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested advocate share, consensus-only (reported)",
+      "anchor": "stationisinadequaterisesfrom",
+      "text": "0.03",
+      "value": 0.02796462736587024
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested advocate share, equity-aware (reported)",
+      "anchor": "stationisinadequaterisesfrom#to",
+      "text": "0.46",
+      "value": 0.4628987760684027
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "swap neighbour weight Gini, consensus-only",
+      "anchor": "residualdifferenceappears,asinthe",
+      "text": "0.16",
+      "value": 0.1608133824172053
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "swap neighbour weight Gini, equity-aware",
+      "anchor": "residualdifferenceappears,asinthe#against",
+      "text": "0.02",
+      "value": 0.0222932855702134
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "largest-difference station weight Gini, consensus-only",
+      "anchor": "atUniversityParkorthe",
+      "text": "0.14",
+      "value": 0.1401030766494458
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "largest-difference station weight Gini, equity-aware",
+      "anchor": "atUniversityParkorthe#against",
+      "text": "0.38",
+      "value": 0.375465031111565
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "largest-difference station advocate share, equity-aware",
+      "anchor": "AtWestfieldDepottheselectedadvocateshareundertheequityregime,",
+      "text": "0.48",
+      "value": 0.4769272261549653
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested mean, consensus-only (again)",
+      "anchor": "Itscollectivemeanfallsfrom",
+      "text": "6.54",
+      "value": 6.53717725343716
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested mean, equity-aware (again)",
+      "anchor": "Itscollectivemeanfallsfrom#to",
+      "text": "5.54",
+      "value": 5.544631627346865
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "largest uncontested mean difference (again)",
+      "anchor": "nearlyafullpointagainst",
+      "text": "0.33",
+      "value": 0.3316287344637212
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "advocates' headcount share",
+      "anchor": "belowtheirheadcountshareof",
+      "text": "0.25",
+      "value": 0.25
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested consensus level set, smallest advocate share",
+      "anchor": "everyconsensusoptimumtheregivingthembetween",
+      "text": "0",
+      "value": 0.0
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested consensus level set, largest advocate share",
+      "anchor": "everyconsensusoptimumtheregivingthembetween#and",
+      "text": "0.20",
+      "value": 0.2036149702006585
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested equity level set, smallest advocate share",
+      "anchor": "everyequityoptimumbetween",
+      "text": "0.07",
+      "value": 0.0698498680143717
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested equity level set, largest advocate share",
+      "anchor": "everyequityoptimumbetween#and",
+      "text": "0.72",
+      "value": 0.7190682035395288
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "advocate shares attainable on both level sets, smallest",
+      "anchor": "Everyadvocatesharebetween",
+      "text": "0.07",
+      "value": 0.0698
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "advocate shares attainable on both level sets, largest",
+      "anchor": "Everyadvocatesharebetween#and",
+      "text": "0.20",
+      "value": 0.2036
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested advocate share, consensus-only (again)",
+      "anchor": "andneitherthe",
+      "text": "0.03",
+      "value": 0.02796462736587024
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested advocate share, equity-aware (again)",
+      "anchor": "andneitherthe#northe",
+      "text": "0.46",
+      "value": 0.4628987760684027
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested weight Gini, consensus-only",
+      "anchor": "withweightGinisof",
+      "text": "0.29",
+      "value": 0.2904747189187364
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested weight Gini, equity-aware",
+      "anchor": "withweightGinisof#and",
+      "text": "0.28",
+      "value": 0.2781108836879435
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested advocates' mean overlap, equity-aware",
+      "anchor": "meanoverlapwiththecollectivedistributionis",
+      "text": "0.62",
+      "value": 0.6171345507280198
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested advocates' mean overlap, consensus-only",
+      "anchor": "meanoverlapwiththecollectivedistributionis#,against",
+      "text": "0.32",
+      "value": 0.3217658284673171
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested smallest overlap, equity-aware (level set)",
+      "anchor": "thesmallestoverlaponthepanelis",
+      "text": "0.48",
+      "value": 0.4810141425919578
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:rt-results",
+      "scope": "prose",
+      "what": "contested smallest overlap, consensus-only (level set)",
+      "anchor": "thesmallestoverlaponthepanelis#against",
+      "text": "0.23",
+      "value": 0.2297724613712611
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "Case IV re-seeded panels (robustness table)",
+      "anchor": "contestedstationsurvivesall",
+      "text": "forty",
+      "value": 40,
+      "follow": "re-seededpanels"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "Case IV Fehr-Schmidt settings (robustness table)",
+      "anchor": "contestedstationsurvivesallfortyre-seededpanelsandall",
+      "text": "twenty-two",
+      "value": 22,
+      "follow": "Fehr--Schmidtsettings"
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "machine weight share W_M",
+      "anchor": "W_\\mathrmM=\\sum_i\\in\\mathrmMw_i=",
+      "text": "0.76",
+      "value": 0.7613540406786532
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "human weight share W_H",
+      "anchor": "W_\\mathrmH=\\sum_i\\in\\mathrmHw_i=",
+      "text": "0.24",
+      "value": 0.2386459593213467
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "optimized human-machine mean CRPS",
+      "anchor": "optimizedhuman-machineaggregatescores",
+      "text": "0.24",
+      "value": 0.2428340922971232
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "optimized human-only mean CRPS",
+      "anchor": "optimizedhuman-machineaggregatescores#against",
+      "text": "0.35",
+      "value": 0.34672168056872
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "equal-weight human-machine mean CRPS",
+      "anchor": "fortheoptimizedhuman-onlyaggregateand",
+      "text": "0.27",
+      "value": 0.2723586921735339
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "largest leave-one-out mean CRPS",
+      "anchor": [
+        "leave-one-outre-solvesscoring",
+        "leave-one-outre-solvesscores"
+      ],
+      "text": "0.26",
+      "value": 0.2576582730549034
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "climatological uncertainty UNC",
+      "anchor": [
+        "sampleclimatologicaluncertainty",
+        "seventy-twooutcomes,whichis",
+        "drawnindependentlyfromit,whichis"
+      ],
+      "text": "0.88",
+      "value": 0.8845512944292265
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "equal-weight pool of the calibrated members, spread",
+      "anchor": "reportsaspreadof",
+      "text": "0.85",
+      "value": 0.8516395468868125
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "equal-weight pool of the calibrated members, error of the mean",
+      "anchor": "againstaroot-mean-squareerrorof",
+      "text": "0.47",
+      "value": 0.4714010087577707
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "design-level optimized human-machine expected CRPS",
+      "anchor": "theoptimizedhuman-machinepoolscores",
+      "text": "0.255",
+      "value": 0.2548794962546193
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "design-level optimized human-only expected CRPS",
+      "anchor": "theoptimizedhuman-machinepoolscores#against",
+      "text": "0.346",
+      "value": 0.3459578052178631
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "design-level equal-weight expected CRPS",
+      "anchor": "forthehuman-onlypooland",
+      "text": "0.279",
+      "value": 0.2791915726749475
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "design-level optimized machine-only expected CRPS",
+      "anchor": "thesameprogramgivesapoolthatscores",
+      "text": "0.267",
+      "value": 0.2669291259389426
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:fc-results",
+      "scope": "prose",
+      "what": "weight of the overconfident machine M3",
+      "anchor": "M3receives",
+      "text": "0.02",
+      "value": 0.02497426508936971
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "number of regenerated records (robustness table)",
+      "anchor": "ineachofthe",
+      "text": "500",
+      "value": 500
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-synthesis",
+      "scope": "table:tab:robustness",
+      "what": "records with M4 in the (-, +) cell (robustness table)",
+      "anchor": "negativecalibrationchannelin",
+      "text": "474",
+      "value": 474
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-practice",
+      "scope": "prose",
+      "what": "seed of every reported panel and solution",
+      "anchor": "isfixedbytheseed",
+      "text": "202603",
+      "value": 202603
+    },
+    {
+      "file": "chapter6.tex",
+      "section": "sec:app-practice",
+      "scope": "prose",
+      "what": "seed of the second set of Case III solver starts",
+      "anchor": "secondsetofsolverstartsinCaseIII,whichtheseed",
+      "text": "202604",
+      "value": 202604
+    }
+  ],
+  "_layout_errors": {}
+}

@@ -1,0 +1,20 @@
+# Reference software stack: the exact versions that built the shipped workbooks and figures.
+# With them, on the reference platform, a rebuild reproduces every workbook byte for byte and
+# every figure with the same PDF content streams. With other versions the results agree to
+# rounding, but non-unique weight vectors, the counts of solver starts, and the placement of
+# figure text can differ (see environment.py).
+#
+# The versions do not fix the arithmetic by themselves, because NumPy and SciPy pick their
+# numerical kernels from the processor and split matrix products over as many threads as the
+# machine has processors. The pack requests the kernels and the thread count of the reference
+# machine itself (environment.py), so nothing has to be set by hand. It sets and reads back
+# the thread count with threadpoolctl, whose version does not matter.
+#
+# Python 3.9 (reference: CPython 3.9.18 on Windows 11, x86-64). These pins install on
+# Python 3.9 to 3.12.
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.3.3
+openpyxl==3.1.5
+matplotlib==3.8.4
+threadpoolctl>=3.1
